@@ -309,7 +309,9 @@ def enhance_purchase_orders_with_risk(
         enhanced["quality_defect_rate"].fillna(3) / 10 * (operational_w / 2) +
         enhanced["employee_turnover_pct"].fillna(5) / 15 * (operational_w / 2)
     )
-    enhanced["composite_risk_score"] = ((supplier_risk + external_risk + operational_risk) * 100).round(1)
+    enhanced["composite_risk_score"] = (
+        (supplier_risk + external_risk + operational_risk) * 100
+    ).clip(0, 100).round(1)
 
     thresholds = cfg.get("thresholds", {})
     low_max = thresholds.get("low_risk_max", 0.30) * 100
