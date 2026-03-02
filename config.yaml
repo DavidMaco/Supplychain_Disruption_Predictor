@@ -1,0 +1,106 @@
+# =============================================================================
+# Supply Chain Disruption Predictor - Configuration
+# All tunable parameters in one place for reproducibility and experimentation
+# =============================================================================
+
+# --- Reproducibility ---
+random_seed: 42
+
+# --- Data Generation ---
+data:
+  lookback_days: 730                   # Historical window for risk factors
+  supplier_health_months: 24           # Months of supplier health records
+  source_files:
+    suppliers: "suppliers.csv"
+    purchase_orders: "purchase_orders.csv"
+  output_files:
+    risk_factors: "risk_factors_daily.csv"
+    supplier_health: "supplier_health_monthly.csv"
+    enhanced_orders: "purchase_orders_enhanced.csv"
+    ml_features: "ml_features.csv"
+
+# --- External Risk Factor Ranges ---
+external_risk:
+  rainy_months: [4, 5, 6, 7, 8, 9, 10]
+  holiday_months: [12, 1]
+  rainfall_range_rainy: [0.3, 0.9]
+  rainfall_range_dry: [0.1, 0.4]
+  base_fuel_price: 200
+  fuel_price_daily_increment: 0.15
+  fuel_price_volatility: [0.9, 1.2]
+  base_fx_rate: 800
+  fx_daily_depreciation: 1.1
+  fx_volatility: [0.95, 1.15]
+  base_congestion: 30
+  rainy_congestion_add: 20
+  holiday_congestion_add: 15
+  congestion_multiplier: [0.8, 1.4]
+  disruption_probability: 0.05
+
+# --- Composite Risk Score Weights ---
+risk_weights:
+  supplier_weight: 0.40               # Weight for supplier-based risk
+  external_weight: 0.30               # Weight for external risk factors
+  operational_weight: 0.30            # Weight for operational risk
+
+# --- Feature Engineering ---
+features:
+  delay_rolling_window: 5             # Orders for rolling avg delay
+  late_rate_rolling_window: 10        # Orders for rolling late rate
+  default_avg_delay: 0                # Fill value when no history
+  default_late_rate: 0.5              # Fill value when no history
+  default_days_since_order: 30        # Fill value for first order
+
+# --- Join Quality Thresholds ---
+data_contracts:
+  min_external_coverage_pct: 80       # Minimum % of POs with external data
+  min_health_coverage_pct: 90         # Minimum % of POs with supplier health
+  required_po_columns:
+    - po_number
+    - supplier_id
+    - supplier_name
+    - po_date
+    - total_amount_ngn
+    - quantity
+    - expected_delivery_date
+    - delivery_status
+  required_supplier_columns:
+    - supplier_id
+    - supplier_name
+    - risk_level
+    - country
+
+# --- Model Training ---
+model:
+  test_size: 0.20
+  n_estimators: 100
+  max_depth: 10
+  min_samples_split: 20
+  min_samples_leaf: 10
+  class_weight: "balanced"
+  cv_folds: 5                         # For cross-validation
+
+# --- Risk Classification Thresholds ---
+thresholds:
+  low_risk_max: 0.30
+  medium_risk_max: 0.60
+  high_risk_min: 0.60                 # Alert trigger
+
+# --- Business Impact Assumptions (SCENARIO-BASED) ---
+business_assumptions:
+  delay_cost_pct_per_week: 0.03       # 3% of order value per week of delay
+  assumed_avg_delay_weeks: 2          # Assumed average delay duration
+  mitigation_success_rate: 0.70       # 70% of delays prevented with intervention
+  note: "These are scenario assumptions, NOT measured outcomes. Treat as estimates."
+
+# --- Model Outputs ---
+outputs:
+  model_file: "disruption_predictor_model.pkl"
+  predictions_file: "predictions_pending_orders.csv"
+  scorecard_file: "supplier_risk_scorecard.csv"
+  feature_importance_file: "feature_importance.csv"
+  model_metrics_file: "model_metrics.json"
+  business_impact_file: "business_impact.json"
+  claim_evidence_file: "claim_evidence.json"
+  run_metadata_file: "run_metadata.json"
+  join_diagnostics_file: "join_diagnostics.json"

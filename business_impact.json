@@ -1,0 +1,13 @@
+{
+  "_disclaimer": "SCENARIO-BASED estimates. These assume fixed delay cost rates and mitigation success percentages that have NOT been validated against real intervention outcomes.",
+  "assumptions": {
+    "delay_cost_pct_per_week": 0.03,
+    "assumed_avg_delay_weeks": 2,
+    "mitigation_success_rate": 0.7
+  },
+  "high_risk_orders": 6,
+  "high_risk_value_ngn": 412776152.67,
+  "estimated_delay_cost_ngn": 24766569.16,
+  "potential_savings_ngn": 17336598.41,
+  "avg_prediction_confidence": 0.5087
+}

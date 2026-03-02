@@ -1,0 +1,961 @@
+supplier_id,supplier_name,month,financial_health_score,capacity_utilization_pct,employee_turnover_pct,quality_defect_rate,inventory_days,payment_default_risk
+SUP1000,Raw Materials Supplier 1 (IND),2024-03,80,87.9,9.1,7.7,33,11.0
+SUP1000,Raw Materials Supplier 1 (IND),2024-04,83,92.0,12.3,5.97,62,24.1
+SUP1000,Raw Materials Supplier 1 (IND),2024-05,55,79.4,9.2,1.42,15,16.5
+SUP1000,Raw Materials Supplier 1 (IND),2024-05,67,78.8,14.3,2.79,59,9.2
+SUP1000,Raw Materials Supplier 1 (IND),2024-06,83,82.6,8.7,1.71,43,17.3
+SUP1000,Raw Materials Supplier 1 (IND),2024-07,63,66.8,4.4,6.5,21,22.0
+SUP1000,Raw Materials Supplier 1 (IND),2024-08,84,94.7,9.1,5.34,24,10.8
+SUP1000,Raw Materials Supplier 1 (IND),2024-09,57,68.8,4.6,4.85,57,12.1
+SUP1000,Raw Materials Supplier 1 (IND),2024-10,76,82.9,3.3,5.15,39,11.4
+SUP1000,Raw Materials Supplier 1 (IND),2024-11,69,71.5,10.6,5.7,34,16.3
+SUP1000,Raw Materials Supplier 1 (IND),2024-12,66,88.3,14.5,1.76,55,9.9
+SUP1000,Raw Materials Supplier 1 (IND),2025-01,62,84.9,10.3,2.58,61,7.7
+SUP1000,Raw Materials Supplier 1 (IND),2025-02,78,71.6,8.2,3.84,54,14.7
+SUP1000,Raw Materials Supplier 1 (IND),2025-03,58,66.2,9.9,6.81,32,22.8
+SUP1000,Raw Materials Supplier 1 (IND),2025-04,61,69.2,13.5,1.07,24,22.8
+SUP1000,Raw Materials Supplier 1 (IND),2025-05,82,77.8,2.4,4.86,66,20.4
+SUP1000,Raw Materials Supplier 1 (IND),2025-06,61,91.7,9.2,4.58,84,14.4
+SUP1000,Raw Materials Supplier 1 (IND),2025-07,79,65.2,7.1,7.19,90,19.7
+SUP1000,Raw Materials Supplier 1 (IND),2025-08,64,64.7,8.5,1.18,61,15.0
+SUP1000,Raw Materials Supplier 1 (IND),2025-09,76,68.4,14.5,7.86,36,20.1
+SUP1000,Raw Materials Supplier 1 (IND),2025-10,59,75.6,4.3,7.62,33,19.7
+SUP1000,Raw Materials Supplier 1 (IND),2025-11,70,92.9,2.5,6.21,44,6.3
+SUP1000,Raw Materials Supplier 1 (IND),2025-12,66,68.2,10.7,4.38,61,12.8
+SUP1000,Raw Materials Supplier 1 (IND),2026-01,84,75.9,2.6,7.85,56,7.1
+SUP1001,Raw Materials Supplier 2 (UK),2024-03,85,78.2,12.8,6.76,48,16.6
+SUP1001,Raw Materials Supplier 2 (UK),2024-04,73,66.1,10.5,3.24,24,15.3
+SUP1001,Raw Materials Supplier 2 (UK),2024-05,67,94.0,4.9,3.54,59,14.7
+SUP1001,Raw Materials Supplier 2 (UK),2024-05,70,91.1,2.1,7.12,71,8.3
+SUP1001,Raw Materials Supplier 2 (UK),2024-06,57,78.0,5.7,1.63,35,12.2
+SUP1001,Raw Materials Supplier 2 (UK),2024-07,77,88.6,10.6,3.61,57,19.4
+SUP1001,Raw Materials Supplier 2 (UK),2024-08,70,83.6,8.2,4.93,67,5.4
+SUP1001,Raw Materials Supplier 2 (UK),2024-09,56,64.5,9.7,1.51,80,5.8
+SUP1001,Raw Materials Supplier 2 (UK),2024-10,73,65.1,4.2,7.42,81,24.2
+SUP1001,Raw Materials Supplier 2 (UK),2024-11,74,93.9,10.3,7.09,51,23.9
+SUP1001,Raw Materials Supplier 2 (UK),2024-12,61,75.7,14.9,7.0,36,9.4
+SUP1001,Raw Materials Supplier 2 (UK),2025-01,68,81.0,12.3,6.65,38,17.5
+SUP1001,Raw Materials Supplier 2 (UK),2025-02,71,69.3,11.4,3.07,73,16.9
+SUP1001,Raw Materials Supplier 2 (UK),2025-03,57,68.0,7.0,1.31,40,15.5
+SUP1001,Raw Materials Supplier 2 (UK),2025-04,84,77.7,7.5,1.62,27,8.5
+SUP1001,Raw Materials Supplier 2 (UK),2025-05,83,81.5,2.5,6.38,79,20.0
+SUP1001,Raw Materials Supplier 2 (UK),2025-06,57,76.9,3.7,5.03,15,22.9
+SUP1001,Raw Materials Supplier 2 (UK),2025-07,79,83.7,7.6,3.66,20,19.0
+SUP1001,Raw Materials Supplier 2 (UK),2025-08,68,68.0,12.4,6.42,63,12.0
+SUP1001,Raw Materials Supplier 2 (UK),2025-09,80,85.9,11.9,5.73,27,13.5
+SUP1001,Raw Materials Supplier 2 (UK),2025-10,63,76.7,5.0,6.94,51,17.0
+SUP1001,Raw Materials Supplier 2 (UK),2025-11,72,74.3,4.5,5.82,15,16.6
+SUP1001,Raw Materials Supplier 2 (UK),2025-12,58,78.2,6.9,2.04,55,13.2
+SUP1001,Raw Materials Supplier 2 (UK),2026-01,58,65.4,10.5,2.4,83,13.5
+SUP1002,Raw Materials Supplier 3 (GER),2024-03,66,81.4,14.9,3.48,41,13.3
+SUP1002,Raw Materials Supplier 3 (GER),2024-04,80,79.5,4.3,4.69,76,10.1
+SUP1002,Raw Materials Supplier 3 (GER),2024-05,64,80.2,12.1,3.49,32,22.1
+SUP1002,Raw Materials Supplier 3 (GER),2024-05,76,64.2,5.0,6.37,35,7.0
+SUP1002,Raw Materials Supplier 3 (GER),2024-06,71,74.0,6.4,4.63,21,8.2
+SUP1002,Raw Materials Supplier 3 (GER),2024-07,85,82.3,12.5,6.67,75,23.5
+SUP1002,Raw Materials Supplier 3 (GER),2024-08,68,63.1,5.4,3.28,19,19.5
+SUP1002,Raw Materials Supplier 3 (GER),2024-09,84,94.5,10.0,4.41,22,23.9
+SUP1002,Raw Materials Supplier 3 (GER),2024-10,81,66.1,8.4,0.58,81,10.7
+SUP1002,Raw Materials Supplier 3 (GER),2024-11,56,87.4,8.6,5.74,36,18.5
+SUP1002,Raw Materials Supplier 3 (GER),2024-12,66,68.4,2.0,1.68,50,20.6
+SUP1002,Raw Materials Supplier 3 (GER),2025-01,66,83.4,7.3,2.0,16,19.7
+SUP1002,Raw Materials Supplier 3 (GER),2025-02,57,92.2,9.1,5.95,86,23.3
+SUP1002,Raw Materials Supplier 3 (GER),2025-03,66,72.2,12.6,2.2,39,14.1
+SUP1002,Raw Materials Supplier 3 (GER),2025-04,67,80.1,5.4,3.55,28,16.2
+SUP1002,Raw Materials Supplier 3 (GER),2025-05,71,70.3,14.3,6.52,47,22.5
+SUP1002,Raw Materials Supplier 3 (GER),2025-06,81,87.8,5.3,3.82,63,16.3
+SUP1002,Raw Materials Supplier 3 (GER),2025-07,79,68.5,6.4,6.32,73,22.9
+SUP1002,Raw Materials Supplier 3 (GER),2025-08,82,61.0,3.5,1.01,43,18.5
+SUP1002,Raw Materials Supplier 3 (GER),2025-09,62,88.0,7.4,3.15,83,5.2
+SUP1002,Raw Materials Supplier 3 (GER),2025-10,81,69.2,5.7,3.49,58,6.5
+SUP1002,Raw Materials Supplier 3 (GER),2025-11,84,66.2,6.1,2.14,88,10.4
+SUP1002,Raw Materials Supplier 3 (GER),2025-12,85,86.1,14.1,1.93,40,9.7
+SUP1002,Raw Materials Supplier 3 (GER),2026-01,62,90.5,4.7,2.02,46,21.7
+SUP1003,Raw Materials Supplier 4 (CHI),2024-03,66,65.5,3.4,7.4,78,17.3
+SUP1003,Raw Materials Supplier 4 (CHI),2024-04,79,90.0,14.5,6.86,62,17.4
+SUP1003,Raw Materials Supplier 4 (CHI),2024-05,70,91.4,13.5,4.81,50,14.8
+SUP1003,Raw Materials Supplier 4 (CHI),2024-05,79,92.1,5.6,2.17,88,7.6
+SUP1003,Raw Materials Supplier 4 (CHI),2024-06,71,88.0,8.2,4.56,79,11.9
+SUP1003,Raw Materials Supplier 4 (CHI),2024-07,82,84.0,4.3,7.82,81,14.2
+SUP1003,Raw Materials Supplier 4 (CHI),2024-08,77,60.3,10.8,3.35,27,11.5
+SUP1003,Raw Materials Supplier 4 (CHI),2024-09,74,90.2,4.4,2.47,49,14.4
+SUP1003,Raw Materials Supplier 4 (CHI),2024-10,74,72.0,4.4,3.68,68,19.0
+SUP1003,Raw Materials Supplier 4 (CHI),2024-11,66,72.8,7.2,3.88,88,7.6
+SUP1003,Raw Materials Supplier 4 (CHI),2024-12,73,84.0,12.6,5.91,45,16.1
+SUP1003,Raw Materials Supplier 4 (CHI),2025-01,82,73.3,3.9,7.69,34,14.5
+SUP1003,Raw Materials Supplier 4 (CHI),2025-02,55,66.2,8.5,7.97,81,15.7
+SUP1003,Raw Materials Supplier 4 (CHI),2025-03,65,87.5,5.9,4.72,87,6.0
+SUP1003,Raw Materials Supplier 4 (CHI),2025-04,58,84.2,2.8,6.6,75,21.8
+SUP1003,Raw Materials Supplier 4 (CHI),2025-05,58,75.7,6.4,3.21,86,16.1
+SUP1003,Raw Materials Supplier 4 (CHI),2025-06,80,69.0,2.3,1.41,40,16.5
+SUP1003,Raw Materials Supplier 4 (CHI),2025-07,75,82.7,4.3,6.35,60,11.5
+SUP1003,Raw Materials Supplier 4 (CHI),2025-08,71,77.1,11.6,7.17,63,17.3
+SUP1003,Raw Materials Supplier 4 (CHI),2025-09,69,82.1,3.9,1.76,58,13.4
+SUP1003,Raw Materials Supplier 4 (CHI),2025-10,74,80.0,13.0,1.04,35,11.9
+SUP1003,Raw Materials Supplier 4 (CHI),2025-11,65,71.1,5.8,2.51,65,10.4
+SUP1003,Raw Materials Supplier 4 (CHI),2025-12,69,87.3,14.2,6.11,81,24.3
+SUP1003,Raw Materials Supplier 4 (CHI),2026-01,68,65.9,13.1,1.44,45,18.2
+SUP1004,Raw Materials Supplier 5 (NIG),2024-03,85,86.0,11.7,2.08,65,12.1
+SUP1004,Raw Materials Supplier 5 (NIG),2024-04,57,92.8,8.2,0.9,65,20.5
+SUP1004,Raw Materials Supplier 5 (NIG),2024-05,57,63.6,10.0,1.13,64,16.2
+SUP1004,Raw Materials Supplier 5 (NIG),2024-05,62,85.8,7.8,1.45,82,26.8
+SUP1004,Raw Materials Supplier 5 (NIG),2024-06,55,61.2,6.6,7.36,75,19.3
+SUP1004,Raw Materials Supplier 5 (NIG),2024-07,82,78.9,5.5,3.84,84,13.5
+SUP1004,Raw Materials Supplier 5 (NIG),2024-08,74,76.0,11.7,7.08,70,20.5
+SUP1004,Raw Materials Supplier 5 (NIG),2024-09,75,78.7,13.8,4.11,44,26.1
+SUP1004,Raw Materials Supplier 5 (NIG),2024-10,69,70.8,7.4,1.67,16,10.0
+SUP1004,Raw Materials Supplier 5 (NIG),2024-11,81,86.5,3.8,2.65,83,10.2
+SUP1004,Raw Materials Supplier 5 (NIG),2024-12,84,77.2,11.8,2.75,70,26.0
+SUP1004,Raw Materials Supplier 5 (NIG),2025-01,74,68.1,2.1,3.3,67,27.6
+SUP1004,Raw Materials Supplier 5 (NIG),2025-02,68,73.8,4.1,6.03,64,26.6
+SUP1004,Raw Materials Supplier 5 (NIG),2025-03,62,69.2,7.5,2.3,49,15.7
+SUP1004,Raw Materials Supplier 5 (NIG),2025-04,78,78.6,5.5,1.91,23,13.6
+SUP1004,Raw Materials Supplier 5 (NIG),2025-05,64,63.9,7.9,3.9,77,13.8
+SUP1004,Raw Materials Supplier 5 (NIG),2025-06,55,65.3,14.6,0.67,28,15.6
+SUP1004,Raw Materials Supplier 5 (NIG),2025-07,59,85.0,11.5,2.25,34,10.3
+SUP1004,Raw Materials Supplier 5 (NIG),2025-08,61,72.0,6.1,6.5,62,19.3
+SUP1004,Raw Materials Supplier 5 (NIG),2025-09,80,61.1,3.0,6.13,33,11.1
+SUP1004,Raw Materials Supplier 5 (NIG),2025-10,79,73.7,9.1,1.86,47,26.3
+SUP1004,Raw Materials Supplier 5 (NIG),2025-11,81,60.4,14.7,5.86,64,25.4
+SUP1004,Raw Materials Supplier 5 (NIG),2025-12,69,68.7,14.9,1.99,27,20.4
+SUP1004,Raw Materials Supplier 5 (NIG),2026-01,61,76.5,10.9,2.84,56,13.2
+SUP1005,Raw Materials Supplier 6 (NIG),2024-03,78,61.5,14.2,4.41,47,19.6
+SUP1005,Raw Materials Supplier 6 (NIG),2024-04,64,67.0,13.5,6.98,42,29.5
+SUP1005,Raw Materials Supplier 6 (NIG),2024-05,62,82.2,6.2,1.76,50,21.7
+SUP1005,Raw Materials Supplier 6 (NIG),2024-05,67,87.6,2.1,0.81,75,23.8
+SUP1005,Raw Materials Supplier 6 (NIG),2024-06,59,73.0,3.2,1.68,26,23.7
+SUP1005,Raw Materials Supplier 6 (NIG),2024-07,65,92.6,15.0,5.19,22,17.1
+SUP1005,Raw Materials Supplier 6 (NIG),2024-08,59,84.5,12.3,1.44,44,16.3
+SUP1005,Raw Materials Supplier 6 (NIG),2024-09,72,87.6,11.8,6.54,71,24.7
+SUP1005,Raw Materials Supplier 6 (NIG),2024-10,55,84.1,6.7,1.51,20,19.7
+SUP1005,Raw Materials Supplier 6 (NIG),2024-11,69,79.6,9.1,4.18,87,13.7
+SUP1005,Raw Materials Supplier 6 (NIG),2024-12,66,71.3,8.1,7.01,85,13.2
+SUP1005,Raw Materials Supplier 6 (NIG),2025-01,71,65.4,5.8,2.48,61,19.1
+SUP1005,Raw Materials Supplier 6 (NIG),2025-02,79,82.3,6.9,1.89,17,22.4
+SUP1005,Raw Materials Supplier 6 (NIG),2025-03,66,87.2,5.1,5.91,83,26.4
+SUP1005,Raw Materials Supplier 6 (NIG),2025-04,61,78.3,8.5,4.64,51,16.5
+SUP1005,Raw Materials Supplier 6 (NIG),2025-05,75,71.3,3.3,5.44,20,26.7
+SUP1005,Raw Materials Supplier 6 (NIG),2025-06,59,66.3,2.4,1.3,39,12.0
+SUP1005,Raw Materials Supplier 6 (NIG),2025-07,73,82.5,7.1,4.17,90,15.1
+SUP1005,Raw Materials Supplier 6 (NIG),2025-08,66,67.7,11.3,0.6,41,23.1
+SUP1005,Raw Materials Supplier 6 (NIG),2025-09,84,91.1,3.0,6.51,22,17.2
+SUP1005,Raw Materials Supplier 6 (NIG),2025-10,78,92.8,7.4,3.27,22,26.5
+SUP1005,Raw Materials Supplier 6 (NIG),2025-11,63,78.5,11.5,6.76,24,28.9
+SUP1005,Raw Materials Supplier 6 (NIG),2025-12,85,78.2,3.3,2.23,64,13.8
+SUP1005,Raw Materials Supplier 6 (NIG),2026-01,71,83.0,9.4,7.61,86,25.0
+SUP1006,Raw Materials Supplier 7 (NIG),2024-03,68,86.1,12.0,4.82,73,24.1
+SUP1006,Raw Materials Supplier 7 (NIG),2024-04,68,90.9,4.2,1.85,66,20.1
+SUP1006,Raw Materials Supplier 7 (NIG),2024-05,76,65.5,15.0,3.82,60,28.0
+SUP1006,Raw Materials Supplier 7 (NIG),2024-05,72,94.7,6.2,3.29,70,26.5
+SUP1006,Raw Materials Supplier 7 (NIG),2024-06,65,81.3,9.3,2.1,85,28.5
+SUP1006,Raw Materials Supplier 7 (NIG),2024-07,63,72.6,7.9,7.7,15,24.5
+SUP1006,Raw Materials Supplier 7 (NIG),2024-08,64,80.9,8.7,7.95,53,10.1
+SUP1006,Raw Materials Supplier 7 (NIG),2024-09,62,67.5,6.1,6.29,50,28.4
+SUP1006,Raw Materials Supplier 7 (NIG),2024-10,71,79.5,14.0,1.66,19,19.2
+SUP1006,Raw Materials Supplier 7 (NIG),2024-11,59,64.8,6.8,4.87,44,15.1
+SUP1006,Raw Materials Supplier 7 (NIG),2024-12,64,63.2,7.2,7.38,24,24.5
+SUP1006,Raw Materials Supplier 7 (NIG),2025-01,80,76.9,8.3,7.24,88,26.4
+SUP1006,Raw Materials Supplier 7 (NIG),2025-02,58,80.8,5.9,5.98,88,17.6
+SUP1006,Raw Materials Supplier 7 (NIG),2025-03,79,62.0,12.0,3.11,70,18.3
+SUP1006,Raw Materials Supplier 7 (NIG),2025-04,82,64.2,12.0,6.11,16,22.7
+SUP1006,Raw Materials Supplier 7 (NIG),2025-05,75,73.4,6.0,0.81,84,21.3
+SUP1006,Raw Materials Supplier 7 (NIG),2025-06,65,77.6,4.9,0.88,65,29.4
+SUP1006,Raw Materials Supplier 7 (NIG),2025-07,79,80.8,8.6,2.17,52,25.7
+SUP1006,Raw Materials Supplier 7 (NIG),2025-08,59,64.6,3.1,4.79,21,21.0
+SUP1006,Raw Materials Supplier 7 (NIG),2025-09,63,63.0,8.5,6.3,31,25.2
+SUP1006,Raw Materials Supplier 7 (NIG),2025-10,70,79.6,8.3,5.39,40,21.2
+SUP1006,Raw Materials Supplier 7 (NIG),2025-11,78,78.3,5.2,2.5,70,16.5
+SUP1006,Raw Materials Supplier 7 (NIG),2025-12,84,80.2,3.5,3.6,61,17.0
+SUP1006,Raw Materials Supplier 7 (NIG),2026-01,65,72.1,10.5,6.27,36,29.8
+SUP1007,Raw Materials Supplier 8 (USA),2024-03,74,88.8,12.4,5.17,71,5.9
+SUP1007,Raw Materials Supplier 8 (USA),2024-04,81,68.2,10.9,1.67,25,7.2
+SUP1007,Raw Materials Supplier 8 (USA),2024-05,56,68.5,10.1,1.61,51,5.3
+SUP1007,Raw Materials Supplier 8 (USA),2024-05,77,88.1,6.0,4.03,57,9.2
+SUP1007,Raw Materials Supplier 8 (USA),2024-06,72,67.4,9.1,6.13,85,14.7
+SUP1007,Raw Materials Supplier 8 (USA),2024-07,78,94.7,11.0,5.51,63,16.7
+SUP1007,Raw Materials Supplier 8 (USA),2024-08,76,78.4,5.3,0.95,40,20.8
+SUP1007,Raw Materials Supplier 8 (USA),2024-09,74,69.5,8.0,7.59,23,12.8
+SUP1007,Raw Materials Supplier 8 (USA),2024-10,63,83.2,13.9,3.2,28,5.4
+SUP1007,Raw Materials Supplier 8 (USA),2024-11,82,90.9,7.0,7.85,80,24.5
+SUP1007,Raw Materials Supplier 8 (USA),2024-12,58,91.6,8.3,4.98,26,8.7
+SUP1007,Raw Materials Supplier 8 (USA),2025-01,71,93.8,9.3,5.84,20,9.9
+SUP1007,Raw Materials Supplier 8 (USA),2025-02,71,70.7,8.4,6.08,17,11.9
+SUP1007,Raw Materials Supplier 8 (USA),2025-03,66,72.4,5.9,7.97,79,10.5
+SUP1007,Raw Materials Supplier 8 (USA),2025-04,56,81.9,13.4,7.18,18,23.9
+SUP1007,Raw Materials Supplier 8 (USA),2025-05,85,69.8,4.0,7.23,32,6.8
+SUP1007,Raw Materials Supplier 8 (USA),2025-06,67,78.2,10.8,7.05,44,13.3
+SUP1007,Raw Materials Supplier 8 (USA),2025-07,73,65.3,14.6,7.32,57,14.0
+SUP1007,Raw Materials Supplier 8 (USA),2025-08,59,67.2,3.8,4.56,40,22.3
+SUP1007,Raw Materials Supplier 8 (USA),2025-09,64,84.1,13.7,7.32,70,24.9
+SUP1007,Raw Materials Supplier 8 (USA),2025-10,79,65.1,14.1,7.38,55,6.4
+SUP1007,Raw Materials Supplier 8 (USA),2025-11,72,93.2,3.5,2.88,33,19.5
+SUP1007,Raw Materials Supplier 8 (USA),2025-12,79,71.2,14.6,7.71,53,13.9
+SUP1007,Raw Materials Supplier 8 (USA),2026-01,84,88.8,10.3,6.04,34,20.6
+SUP1008,Packaging Supplier 1 (CHI),2024-03,38,64.6,2.3,7.89,49,17.1
+SUP1008,Packaging Supplier 1 (CHI),2024-04,54,68.1,5.0,5.66,60,6.6
+SUP1008,Packaging Supplier 1 (CHI),2024-05,59,76.7,8.5,5.04,62,8.7
+SUP1008,Packaging Supplier 1 (CHI),2024-05,47,77.2,3.8,1.95,19,13.2
+SUP1008,Packaging Supplier 1 (CHI),2024-06,35,92.4,14.4,2.17,40,20.2
+SUP1008,Packaging Supplier 1 (CHI),2024-07,37,66.2,14.4,3.79,77,18.8
+SUP1008,Packaging Supplier 1 (CHI),2024-08,62,76.0,5.2,3.54,20,17.2
+SUP1008,Packaging Supplier 1 (CHI),2024-09,61,73.3,6.1,5.09,88,16.9
+SUP1008,Packaging Supplier 1 (CHI),2024-10,51,82.4,11.2,0.79,28,14.0
+SUP1008,Packaging Supplier 1 (CHI),2024-11,61,90.7,13.4,2.34,83,12.9
+SUP1008,Packaging Supplier 1 (CHI),2024-12,58,61.4,7.0,6.24,21,8.8
+SUP1008,Packaging Supplier 1 (CHI),2025-01,49,73.9,6.0,6.71,74,8.3
+SUP1008,Packaging Supplier 1 (CHI),2025-02,44,81.5,2.7,4.38,33,14.3
+SUP1008,Packaging Supplier 1 (CHI),2025-03,55,75.8,11.4,1.35,89,23.8
+SUP1008,Packaging Supplier 1 (CHI),2025-04,57,79.1,7.1,2.93,18,8.6
+SUP1008,Packaging Supplier 1 (CHI),2025-05,53,91.4,13.6,7.12,26,10.0
+SUP1008,Packaging Supplier 1 (CHI),2025-06,57,82.7,11.2,1.73,30,6.8
+SUP1008,Packaging Supplier 1 (CHI),2025-07,57,75.7,6.7,4.43,64,19.5
+SUP1008,Packaging Supplier 1 (CHI),2025-08,51,81.4,4.1,4.63,20,20.4
+SUP1008,Packaging Supplier 1 (CHI),2025-09,64,71.7,13.3,6.97,35,22.4
+SUP1008,Packaging Supplier 1 (CHI),2025-10,40,86.9,2.7,2.81,72,10.8
+SUP1008,Packaging Supplier 1 (CHI),2025-11,40,64.1,3.7,2.02,47,5.2
+SUP1008,Packaging Supplier 1 (CHI),2025-12,50,89.9,9.1,0.54,78,9.8
+SUP1008,Packaging Supplier 1 (CHI),2026-01,53,83.1,7.9,3.81,15,9.9
+SUP1009,Packaging Supplier 2 (CHI),2024-03,37,69.7,10.2,6.65,41,6.0
+SUP1009,Packaging Supplier 2 (CHI),2024-04,24,61.9,6.5,1.59,19,18.3
+SUP1009,Packaging Supplier 2 (CHI),2024-05,46,81.1,6.3,1.16,28,13.3
+SUP1009,Packaging Supplier 2 (CHI),2024-05,25,65.6,5.7,5.46,88,20.7
+SUP1009,Packaging Supplier 2 (CHI),2024-06,25,93.8,11.7,3.2,19,6.9
+SUP1009,Packaging Supplier 2 (CHI),2024-07,29,71.3,13.7,6.65,69,21.9
+SUP1009,Packaging Supplier 2 (CHI),2024-08,22,70.2,3.7,5.71,50,11.6
+SUP1009,Packaging Supplier 2 (CHI),2024-09,33,78.4,11.0,5.09,28,16.4
+SUP1009,Packaging Supplier 2 (CHI),2024-10,40,78.5,3.1,5.93,51,13.5
+SUP1009,Packaging Supplier 2 (CHI),2024-11,47,71.1,8.8,7.96,60,23.5
+SUP1009,Packaging Supplier 2 (CHI),2024-12,39,79.7,8.8,5.24,78,21.2
+SUP1009,Packaging Supplier 2 (CHI),2025-01,48,81.3,11.2,7.84,15,7.4
+SUP1009,Packaging Supplier 2 (CHI),2025-02,34,81.9,3.5,6.86,68,13.3
+SUP1009,Packaging Supplier 2 (CHI),2025-03,30,72.2,12.5,2.09,40,18.8
+SUP1009,Packaging Supplier 2 (CHI),2025-04,28,87.7,6.0,4.3,56,20.3
+SUP1009,Packaging Supplier 2 (CHI),2025-05,23,84.0,6.4,5.93,18,21.6
+SUP1009,Packaging Supplier 2 (CHI),2025-06,26,71.6,6.4,5.54,75,20.9
+SUP1009,Packaging Supplier 2 (CHI),2025-07,40,64.8,4.0,3.95,83,22.9
+SUP1009,Packaging Supplier 2 (CHI),2025-08,34,87.4,7.4,6.07,81,11.0
+SUP1009,Packaging Supplier 2 (CHI),2025-09,43,83.7,9.2,0.64,88,18.7
+SUP1009,Packaging Supplier 2 (CHI),2025-10,45,92.1,12.3,1.0,34,10.6
+SUP1009,Packaging Supplier 2 (CHI),2025-11,20,71.9,6.9,4.51,36,16.4
+SUP1009,Packaging Supplier 2 (CHI),2025-12,32,66.6,3.5,6.37,54,19.1
+SUP1009,Packaging Supplier 2 (CHI),2026-01,30,84.8,5.5,1.15,45,12.4
+SUP1010,Packaging Supplier 3 (NIG),2024-03,61,93.3,4.8,2.77,29,17.5
+SUP1010,Packaging Supplier 3 (NIG),2024-04,36,87.2,13.9,3.83,18,26.0
+SUP1010,Packaging Supplier 3 (NIG),2024-05,63,77.5,4.5,7.43,82,16.2
+SUP1010,Packaging Supplier 3 (NIG),2024-05,45,65.0,13.3,6.67,81,23.5
+SUP1010,Packaging Supplier 3 (NIG),2024-06,39,67.2,2.5,3.41,81,12.3
+SUP1010,Packaging Supplier 3 (NIG),2024-07,44,92.6,10.9,4.96,26,16.7
+SUP1010,Packaging Supplier 3 (NIG),2024-08,63,61.6,8.8,5.44,54,10.4
+SUP1010,Packaging Supplier 3 (NIG),2024-09,59,70.9,13.6,2.91,39,15.7
+SUP1010,Packaging Supplier 3 (NIG),2024-10,52,71.2,7.7,1.38,34,13.1
+SUP1010,Packaging Supplier 3 (NIG),2024-11,38,60.5,10.1,4.36,41,20.9
+SUP1010,Packaging Supplier 3 (NIG),2024-12,52,71.1,3.8,5.78,51,21.5
+SUP1010,Packaging Supplier 3 (NIG),2025-01,40,62.5,10.0,3.04,71,11.0
+SUP1010,Packaging Supplier 3 (NIG),2025-02,35,76.5,10.8,1.29,21,11.7
+SUP1010,Packaging Supplier 3 (NIG),2025-03,47,66.3,9.7,4.95,72,22.3
+SUP1010,Packaging Supplier 3 (NIG),2025-04,44,71.6,4.6,6.19,83,11.6
+SUP1010,Packaging Supplier 3 (NIG),2025-05,64,86.5,8.1,1.49,74,11.9
+SUP1010,Packaging Supplier 3 (NIG),2025-06,44,84.0,11.2,3.99,44,28.9
+SUP1010,Packaging Supplier 3 (NIG),2025-07,39,90.1,10.0,7.35,65,13.7
+SUP1010,Packaging Supplier 3 (NIG),2025-08,64,83.3,12.3,7.12,73,19.8
+SUP1010,Packaging Supplier 3 (NIG),2025-09,37,76.6,6.6,3.96,36,15.6
+SUP1010,Packaging Supplier 3 (NIG),2025-10,46,81.2,3.7,1.27,28,16.5
+SUP1010,Packaging Supplier 3 (NIG),2025-11,55,62.5,5.9,3.96,90,18.3
+SUP1010,Packaging Supplier 3 (NIG),2025-12,54,68.5,4.1,4.12,23,16.8
+SUP1010,Packaging Supplier 3 (NIG),2026-01,61,84.3,7.6,7.85,87,25.7
+SUP1011,Packaging Supplier 4 (UK),2024-03,72,84.3,4.3,5.52,88,21.7
+SUP1011,Packaging Supplier 4 (UK),2024-04,58,80.7,8.0,4.66,71,8.5
+SUP1011,Packaging Supplier 4 (UK),2024-05,85,74.2,9.8,5.64,63,11.5
+SUP1011,Packaging Supplier 4 (UK),2024-05,75,83.1,3.2,6.63,89,23.1
+SUP1011,Packaging Supplier 4 (UK),2024-06,75,88.3,11.8,5.46,72,15.6
+SUP1011,Packaging Supplier 4 (UK),2024-07,67,81.5,7.8,2.04,55,11.0
+SUP1011,Packaging Supplier 4 (UK),2024-08,80,92.0,6.0,7.57,70,19.4
+SUP1011,Packaging Supplier 4 (UK),2024-09,84,72.0,3.2,0.56,80,13.1
+SUP1011,Packaging Supplier 4 (UK),2024-10,59,89.8,2.8,7.26,21,5.0
+SUP1011,Packaging Supplier 4 (UK),2024-11,72,88.7,6.7,6.96,18,9.7
+SUP1011,Packaging Supplier 4 (UK),2024-12,77,80.7,10.1,5.84,66,12.6
+SUP1011,Packaging Supplier 4 (UK),2025-01,72,67.4,4.3,1.54,86,12.7
+SUP1011,Packaging Supplier 4 (UK),2025-02,84,72.6,7.4,2.66,31,7.7
+SUP1011,Packaging Supplier 4 (UK),2025-03,57,82.7,3.9,7.14,70,24.5
+SUP1011,Packaging Supplier 4 (UK),2025-04,59,63.0,10.3,3.62,73,22.9
+SUP1011,Packaging Supplier 4 (UK),2025-05,77,81.2,7.5,1.85,80,13.5
+SUP1011,Packaging Supplier 4 (UK),2025-06,81,75.8,6.6,1.89,15,16.6
+SUP1011,Packaging Supplier 4 (UK),2025-07,82,85.6,11.3,2.52,84,16.5
+SUP1011,Packaging Supplier 4 (UK),2025-08,56,94.2,9.4,5.79,29,16.6
+SUP1011,Packaging Supplier 4 (UK),2025-09,85,84.2,3.8,5.98,50,14.3
+SUP1011,Packaging Supplier 4 (UK),2025-10,57,78.3,9.9,2.34,24,18.7
+SUP1011,Packaging Supplier 4 (UK),2025-11,72,87.9,6.1,0.9,58,15.7
+SUP1011,Packaging Supplier 4 (UK),2025-12,55,76.4,8.7,4.02,57,13.4
+SUP1011,Packaging Supplier 4 (UK),2026-01,85,94.2,5.8,1.76,53,19.5
+SUP1012,Packaging Supplier 5 (USA),2024-03,73,69.1,10.2,4.84,88,6.0
+SUP1012,Packaging Supplier 5 (USA),2024-04,64,88.3,10.1,2.65,25,7.5
+SUP1012,Packaging Supplier 5 (USA),2024-05,57,89.8,5.6,1.49,50,10.5
+SUP1012,Packaging Supplier 5 (USA),2024-05,63,60.5,3.5,1.81,90,19.8
+SUP1012,Packaging Supplier 5 (USA),2024-06,76,75.6,12.5,2.46,45,14.7
+SUP1012,Packaging Supplier 5 (USA),2024-07,80,78.5,2.4,7.88,33,16.9
+SUP1012,Packaging Supplier 5 (USA),2024-08,81,65.4,8.4,7.95,64,9.8
+SUP1012,Packaging Supplier 5 (USA),2024-09,69,85.4,4.2,4.83,59,6.1
+SUP1012,Packaging Supplier 5 (USA),2024-10,63,86.4,3.5,1.76,66,14.5
+SUP1012,Packaging Supplier 5 (USA),2024-11,70,86.1,11.8,4.49,63,18.7
+SUP1012,Packaging Supplier 5 (USA),2024-12,67,76.6,3.9,7.03,16,10.8
+SUP1012,Packaging Supplier 5 (USA),2025-01,80,75.7,10.8,7.71,20,6.9
+SUP1012,Packaging Supplier 5 (USA),2025-02,72,82.3,14.4,3.74,49,11.7
+SUP1012,Packaging Supplier 5 (USA),2025-03,63,88.1,5.3,4.88,74,20.5
+SUP1012,Packaging Supplier 5 (USA),2025-04,78,68.5,10.7,6.28,81,11.7
+SUP1012,Packaging Supplier 5 (USA),2025-05,77,94.8,6.1,0.58,16,21.6
+SUP1012,Packaging Supplier 5 (USA),2025-06,55,74.4,8.8,5.64,59,9.4
+SUP1012,Packaging Supplier 5 (USA),2025-07,64,68.8,2.4,5.15,22,23.8
+SUP1012,Packaging Supplier 5 (USA),2025-08,76,91.3,4.8,5.0,30,19.2
+SUP1012,Packaging Supplier 5 (USA),2025-09,58,63.0,9.9,3.32,87,21.1
+SUP1012,Packaging Supplier 5 (USA),2025-10,60,91.4,11.0,2.4,74,18.2
+SUP1012,Packaging Supplier 5 (USA),2025-11,57,82.4,14.0,2.57,69,18.8
+SUP1012,Packaging Supplier 5 (USA),2025-12,76,86.9,6.2,1.71,24,10.5
+SUP1012,Packaging Supplier 5 (USA),2026-01,56,73.4,6.3,0.95,48,8.6
+SUP1013,Packaging Supplier 6 (NIG),2024-03,37,77.2,14.1,5.08,37,22.9
+SUP1013,Packaging Supplier 6 (NIG),2024-04,38,65.0,12.0,2.14,28,28.3
+SUP1013,Packaging Supplier 6 (NIG),2024-05,57,69.1,2.5,1.03,47,25.5
+SUP1013,Packaging Supplier 6 (NIG),2024-05,35,91.4,3.9,5.3,19,23.3
+SUP1013,Packaging Supplier 6 (NIG),2024-06,43,65.3,6.3,3.43,15,20.3
+SUP1013,Packaging Supplier 6 (NIG),2024-07,65,87.0,8.2,3.53,23,20.8
+SUP1013,Packaging Supplier 6 (NIG),2024-08,35,73.5,11.0,6.35,30,21.3
+SUP1013,Packaging Supplier 6 (NIG),2024-09,64,94.7,6.3,2.77,22,22.6
+SUP1013,Packaging Supplier 6 (NIG),2024-10,65,82.6,6.7,6.9,58,11.6
+SUP1013,Packaging Supplier 6 (NIG),2024-11,49,86.6,5.8,2.02,85,10.8
+SUP1013,Packaging Supplier 6 (NIG),2024-12,47,83.1,5.9,3.43,28,22.6
+SUP1013,Packaging Supplier 6 (NIG),2025-01,46,77.0,13.5,3.78,39,12.8
+SUP1013,Packaging Supplier 6 (NIG),2025-02,41,60.9,15.0,2.29,64,11.3
+SUP1013,Packaging Supplier 6 (NIG),2025-03,52,82.5,8.5,7.74,72,29.3
+SUP1013,Packaging Supplier 6 (NIG),2025-04,35,61.3,2.7,6.41,20,18.1
+SUP1013,Packaging Supplier 6 (NIG),2025-05,41,88.2,10.7,3.94,83,13.0
+SUP1013,Packaging Supplier 6 (NIG),2025-06,53,68.2,2.9,6.02,77,23.1
+SUP1013,Packaging Supplier 6 (NIG),2025-07,50,91.8,10.0,2.32,31,10.3
+SUP1013,Packaging Supplier 6 (NIG),2025-08,55,61.7,6.0,6.45,73,22.2
+SUP1013,Packaging Supplier 6 (NIG),2025-09,61,80.7,12.6,1.3,78,21.9
+SUP1013,Packaging Supplier 6 (NIG),2025-10,54,67.7,12.5,3.7,66,16.5
+SUP1013,Packaging Supplier 6 (NIG),2025-11,56,80.2,3.8,6.77,42,25.3
+SUP1013,Packaging Supplier 6 (NIG),2025-12,53,66.1,2.8,2.55,68,13.4
+SUP1013,Packaging Supplier 6 (NIG),2026-01,46,79.4,7.7,7.44,20,12.7
+SUP1014,Packaging Supplier 7 (NIG),2024-03,60,89.7,10.0,6.33,17,27.6
+SUP1014,Packaging Supplier 7 (NIG),2024-04,37,60.2,4.3,1.17,90,27.7
+SUP1014,Packaging Supplier 7 (NIG),2024-05,48,84.3,12.3,4.07,31,14.1
+SUP1014,Packaging Supplier 7 (NIG),2024-05,55,69.5,7.9,2.29,37,22.2
+SUP1014,Packaging Supplier 7 (NIG),2024-06,36,80.9,11.3,5.09,26,22.5
+SUP1014,Packaging Supplier 7 (NIG),2024-07,60,70.5,7.4,4.68,39,12.4
+SUP1014,Packaging Supplier 7 (NIG),2024-08,51,94.2,10.0,6.97,84,20.2
+SUP1014,Packaging Supplier 7 (NIG),2024-09,49,87.0,10.6,2.57,39,12.3
+SUP1014,Packaging Supplier 7 (NIG),2024-10,39,84.0,14.6,4.06,37,13.2
+SUP1014,Packaging Supplier 7 (NIG),2024-11,64,61.5,10.4,2.64,70,15.0
+SUP1014,Packaging Supplier 7 (NIG),2024-12,54,88.2,11.9,0.82,21,28.5
+SUP1014,Packaging Supplier 7 (NIG),2025-01,40,65.5,2.4,4.36,24,27.9
+SUP1014,Packaging Supplier 7 (NIG),2025-02,58,75.6,9.5,3.64,56,14.6
+SUP1014,Packaging Supplier 7 (NIG),2025-03,38,71.4,3.3,6.03,40,17.5
+SUP1014,Packaging Supplier 7 (NIG),2025-04,42,62.6,9.6,0.91,70,12.9
+SUP1014,Packaging Supplier 7 (NIG),2025-05,64,81.3,4.3,3.3,73,24.4
+SUP1014,Packaging Supplier 7 (NIG),2025-06,55,72.6,5.5,3.02,19,23.8
+SUP1014,Packaging Supplier 7 (NIG),2025-07,36,69.8,3.4,3.99,68,13.4
+SUP1014,Packaging Supplier 7 (NIG),2025-08,45,67.7,5.8,1.68,36,21.6
+SUP1014,Packaging Supplier 7 (NIG),2025-09,52,89.9,3.1,6.93,77,27.2
+SUP1014,Packaging Supplier 7 (NIG),2025-10,41,80.7,12.9,2.59,69,24.7
+SUP1014,Packaging Supplier 7 (NIG),2025-11,42,68.7,7.6,2.17,90,28.9
+SUP1014,Packaging Supplier 7 (NIG),2025-12,64,80.1,2.1,7.85,20,29.8
+SUP1014,Packaging Supplier 7 (NIG),2026-01,58,86.9,2.4,4.48,76,26.2
+SUP1015,Packaging Supplier 8 (NIG),2024-03,77,88.7,7.9,2.3,86,25.1
+SUP1015,Packaging Supplier 8 (NIG),2024-04,77,85.6,14.3,1.5,52,14.8
+SUP1015,Packaging Supplier 8 (NIG),2024-05,57,60.6,10.7,1.71,73,27.2
+SUP1015,Packaging Supplier 8 (NIG),2024-05,78,80.4,14.7,3.98,32,27.5
+SUP1015,Packaging Supplier 8 (NIG),2024-06,67,66.5,13.3,5.2,15,27.2
+SUP1015,Packaging Supplier 8 (NIG),2024-07,57,73.5,11.0,4.48,52,18.5
+SUP1015,Packaging Supplier 8 (NIG),2024-08,63,84.4,10.0,4.81,41,25.8
+SUP1015,Packaging Supplier 8 (NIG),2024-09,57,81.7,6.4,7.49,80,28.9
+SUP1015,Packaging Supplier 8 (NIG),2024-10,76,72.7,2.7,3.37,74,22.4
+SUP1015,Packaging Supplier 8 (NIG),2024-11,66,72.8,10.4,5.79,86,24.2
+SUP1015,Packaging Supplier 8 (NIG),2024-12,61,64.8,6.4,4.55,76,24.7
+SUP1015,Packaging Supplier 8 (NIG),2025-01,79,80.3,14.5,2.07,43,16.4
+SUP1015,Packaging Supplier 8 (NIG),2025-02,83,69.4,10.8,2.58,23,17.5
+SUP1015,Packaging Supplier 8 (NIG),2025-03,69,77.0,8.8,1.42,83,23.6
+SUP1015,Packaging Supplier 8 (NIG),2025-04,72,91.5,7.9,3.26,23,13.8
+SUP1015,Packaging Supplier 8 (NIG),2025-05,83,76.0,3.0,7.23,51,29.2
+SUP1015,Packaging Supplier 8 (NIG),2025-06,57,63.8,5.6,5.73,78,13.0
+SUP1015,Packaging Supplier 8 (NIG),2025-07,61,78.2,10.2,2.7,84,28.6
+SUP1015,Packaging Supplier 8 (NIG),2025-08,70,72.1,7.8,5.34,52,13.8
+SUP1015,Packaging Supplier 8 (NIG),2025-09,55,90.5,5.0,7.61,57,18.2
+SUP1015,Packaging Supplier 8 (NIG),2025-10,65,83.0,12.2,4.15,82,26.8
+SUP1015,Packaging Supplier 8 (NIG),2025-11,69,76.0,9.4,7.24,54,13.4
+SUP1015,Packaging Supplier 8 (NIG),2025-12,63,67.9,6.8,2.66,21,13.0
+SUP1015,Packaging Supplier 8 (NIG),2026-01,64,76.0,4.2,7.43,83,15.7
+SUP1016,Packaging Supplier 9 (NIG),2024-03,25,89.4,11.0,5.5,34,13.2
+SUP1016,Packaging Supplier 9 (NIG),2024-04,23,61.4,6.1,1.45,48,17.4
+SUP1016,Packaging Supplier 9 (NIG),2024-05,26,79.7,2.5,2.88,59,13.0
+SUP1016,Packaging Supplier 9 (NIG),2024-05,34,78.9,4.1,2.76,18,18.1
+SUP1016,Packaging Supplier 9 (NIG),2024-06,35,86.9,14.3,7.46,34,10.1
+SUP1016,Packaging Supplier 9 (NIG),2024-07,43,79.1,8.6,5.35,52,19.5
+SUP1016,Packaging Supplier 9 (NIG),2024-08,29,93.9,11.8,7.96,33,26.0
+SUP1016,Packaging Supplier 9 (NIG),2024-09,43,91.7,7.7,5.67,76,28.0
+SUP1016,Packaging Supplier 9 (NIG),2024-10,24,83.7,3.5,0.69,43,18.9
+SUP1016,Packaging Supplier 9 (NIG),2024-11,22,71.4,9.9,1.96,82,14.4
+SUP1016,Packaging Supplier 9 (NIG),2024-12,49,86.8,4.5,1.13,72,23.5
+SUP1016,Packaging Supplier 9 (NIG),2025-01,50,63.1,8.7,1.96,55,22.1
+SUP1016,Packaging Supplier 9 (NIG),2025-02,36,93.0,13.8,3.21,33,24.3
+SUP1016,Packaging Supplier 9 (NIG),2025-03,33,72.9,6.8,2.63,59,16.2
+SUP1016,Packaging Supplier 9 (NIG),2025-04,34,90.6,3.1,5.96,71,24.8
+SUP1016,Packaging Supplier 9 (NIG),2025-05,33,88.1,5.8,6.54,69,24.6
+SUP1016,Packaging Supplier 9 (NIG),2025-06,33,64.9,9.6,1.15,41,16.1
+SUP1016,Packaging Supplier 9 (NIG),2025-07,47,78.4,6.4,7.5,90,25.1
+SUP1016,Packaging Supplier 9 (NIG),2025-08,22,60.2,10.3,2.55,37,21.1
+SUP1016,Packaging Supplier 9 (NIG),2025-09,42,79.9,13.9,1.99,63,15.8
+SUP1016,Packaging Supplier 9 (NIG),2025-10,35,61.5,12.7,6.76,53,19.9
+SUP1016,Packaging Supplier 9 (NIG),2025-11,43,76.2,2.3,0.52,48,16.0
+SUP1016,Packaging Supplier 9 (NIG),2025-12,40,89.2,8.1,5.4,51,18.3
+SUP1016,Packaging Supplier 9 (NIG),2026-01,35,91.7,10.4,0.71,50,19.9
+SUP1017,Packaging Supplier 10 (IND),2024-03,57,81.0,6.7,4.1,70,22.4
+SUP1017,Packaging Supplier 10 (IND),2024-04,75,84.0,14.7,6.64,62,15.3
+SUP1017,Packaging Supplier 10 (IND),2024-05,73,60.6,5.4,4.86,33,11.4
+SUP1017,Packaging Supplier 10 (IND),2024-05,83,84.3,6.6,0.9,61,13.4
+SUP1017,Packaging Supplier 10 (IND),2024-06,84,93.4,2.6,2.69,24,15.3
+SUP1017,Packaging Supplier 10 (IND),2024-07,79,82.0,11.9,4.99,36,15.9
+SUP1017,Packaging Supplier 10 (IND),2024-08,82,71.1,13.0,6.5,49,18.7
+SUP1017,Packaging Supplier 10 (IND),2024-09,77,72.7,8.9,3.14,33,5.3
+SUP1017,Packaging Supplier 10 (IND),2024-10,71,69.8,12.1,3.59,35,7.0
+SUP1017,Packaging Supplier 10 (IND),2024-11,59,77.6,12.8,6.46,86,17.3
+SUP1017,Packaging Supplier 10 (IND),2024-12,81,93.3,13.0,5.84,29,13.3
+SUP1017,Packaging Supplier 10 (IND),2025-01,84,62.7,12.6,7.43,76,12.0
+SUP1017,Packaging Supplier 10 (IND),2025-02,77,72.7,12.6,7.17,81,20.3
+SUP1017,Packaging Supplier 10 (IND),2025-03,65,66.0,6.0,6.08,30,9.4
+SUP1017,Packaging Supplier 10 (IND),2025-04,82,84.3,10.9,2.81,41,7.6
+SUP1017,Packaging Supplier 10 (IND),2025-05,57,74.9,11.9,1.34,17,20.5
+SUP1017,Packaging Supplier 10 (IND),2025-06,79,75.1,4.6,0.75,80,16.9
+SUP1017,Packaging Supplier 10 (IND),2025-07,70,64.2,5.3,1.0,16,20.1
+SUP1017,Packaging Supplier 10 (IND),2025-08,80,64.3,9.8,4.91,40,8.7
+SUP1017,Packaging Supplier 10 (IND),2025-09,66,61.0,3.9,6.1,50,24.0
+SUP1017,Packaging Supplier 10 (IND),2025-10,66,72.3,13.1,6.36,45,15.1
+SUP1017,Packaging Supplier 10 (IND),2025-11,57,63.5,9.5,0.6,42,19.3
+SUP1017,Packaging Supplier 10 (IND),2025-12,85,69.9,13.7,4.53,27,23.5
+SUP1017,Packaging Supplier 10 (IND),2026-01,84,77.6,11.2,3.25,90,8.7
+SUP1018,Packaging Supplier 11 (IND),2024-03,76,93.5,4.4,3.16,63,13.5
+SUP1018,Packaging Supplier 11 (IND),2024-04,71,68.0,3.5,7.88,30,14.3
+SUP1018,Packaging Supplier 11 (IND),2024-05,71,64.8,11.9,5.79,86,19.4
+SUP1018,Packaging Supplier 11 (IND),2024-05,57,71.5,3.5,2.63,54,18.7
+SUP1018,Packaging Supplier 11 (IND),2024-06,81,75.5,9.2,2.68,69,8.8
+SUP1018,Packaging Supplier 11 (IND),2024-07,57,91.3,12.4,7.54,62,8.6
+SUP1018,Packaging Supplier 11 (IND),2024-08,76,77.2,3.4,3.79,25,7.4
+SUP1018,Packaging Supplier 11 (IND),2024-09,67,74.0,9.7,1.26,36,6.3
+SUP1018,Packaging Supplier 11 (IND),2024-10,61,71.9,9.7,7.93,30,9.7
+SUP1018,Packaging Supplier 11 (IND),2024-11,68,85.4,5.6,5.85,89,16.9
+SUP1018,Packaging Supplier 11 (IND),2024-12,79,87.6,10.4,3.5,75,18.3
+SUP1018,Packaging Supplier 11 (IND),2025-01,85,74.2,8.3,2.59,73,7.2
+SUP1018,Packaging Supplier 11 (IND),2025-02,63,77.1,5.0,7.57,18,7.0
+SUP1018,Packaging Supplier 11 (IND),2025-03,56,89.1,8.5,0.7,37,12.7
+SUP1018,Packaging Supplier 11 (IND),2025-04,76,71.4,5.9,5.17,24,18.2
+SUP1018,Packaging Supplier 11 (IND),2025-05,71,86.9,12.3,2.01,78,14.8
+SUP1018,Packaging Supplier 11 (IND),2025-06,63,79.0,12.5,4.55,17,24.1
+SUP1018,Packaging Supplier 11 (IND),2025-07,56,94.7,13.4,1.39,72,11.3
+SUP1018,Packaging Supplier 11 (IND),2025-08,67,75.5,2.5,1.83,53,22.7
+SUP1018,Packaging Supplier 11 (IND),2025-09,60,77.2,3.7,5.87,77,20.3
+SUP1018,Packaging Supplier 11 (IND),2025-10,73,83.6,10.6,5.64,88,14.4
+SUP1018,Packaging Supplier 11 (IND),2025-11,72,89.9,8.6,3.44,78,16.8
+SUP1018,Packaging Supplier 11 (IND),2025-12,67,81.6,6.6,7.83,56,6.2
+SUP1018,Packaging Supplier 11 (IND),2026-01,73,61.6,12.9,3.12,89,5.5
+SUP1019,Equipment Supplier 1 (NIG),2024-03,83,81.9,6.9,3.71,60,18.2
+SUP1019,Equipment Supplier 1 (NIG),2024-04,56,83.1,5.2,5.36,90,11.7
+SUP1019,Equipment Supplier 1 (NIG),2024-05,77,62.3,6.0,3.03,17,20.8
+SUP1019,Equipment Supplier 1 (NIG),2024-05,56,76.1,13.2,4.76,68,15.3
+SUP1019,Equipment Supplier 1 (NIG),2024-06,77,76.4,2.3,2.87,88,17.8
+SUP1019,Equipment Supplier 1 (NIG),2024-07,73,63.4,8.3,5.68,41,16.7
+SUP1019,Equipment Supplier 1 (NIG),2024-08,71,88.4,10.7,1.75,53,17.3
+SUP1019,Equipment Supplier 1 (NIG),2024-09,68,67.1,10.3,7.81,24,26.8
+SUP1019,Equipment Supplier 1 (NIG),2024-10,72,67.5,5.4,2.73,88,18.0
+SUP1019,Equipment Supplier 1 (NIG),2024-11,62,81.9,14.5,5.88,89,11.9
+SUP1019,Equipment Supplier 1 (NIG),2024-12,65,69.6,9.4,4.48,69,14.2
+SUP1019,Equipment Supplier 1 (NIG),2025-01,80,62.7,12.7,4.28,53,18.7
+SUP1019,Equipment Supplier 1 (NIG),2025-02,72,71.0,7.4,2.38,80,19.1
+SUP1019,Equipment Supplier 1 (NIG),2025-03,79,79.2,13.5,5.21,81,27.3
+SUP1019,Equipment Supplier 1 (NIG),2025-04,73,77.5,10.6,6.68,74,15.4
+SUP1019,Equipment Supplier 1 (NIG),2025-05,75,78.6,10.0,6.27,70,28.7
+SUP1019,Equipment Supplier 1 (NIG),2025-06,78,81.9,8.8,3.23,33,14.8
+SUP1019,Equipment Supplier 1 (NIG),2025-07,78,84.0,5.9,3.77,55,27.2
+SUP1019,Equipment Supplier 1 (NIG),2025-08,84,62.3,4.6,3.59,51,22.9
+SUP1019,Equipment Supplier 1 (NIG),2025-09,63,84.0,5.1,2.29,34,13.8
+SUP1019,Equipment Supplier 1 (NIG),2025-10,62,87.9,6.0,4.14,70,18.4
+SUP1019,Equipment Supplier 1 (NIG),2025-11,83,61.3,4.1,1.52,48,25.8
+SUP1019,Equipment Supplier 1 (NIG),2025-12,63,83.1,4.3,6.89,77,25.6
+SUP1019,Equipment Supplier 1 (NIG),2026-01,56,90.1,3.1,5.01,23,28.0
+SUP1020,Equipment Supplier 2 (CHI),2024-03,48,91.4,10.7,7.14,65,23.9
+SUP1020,Equipment Supplier 2 (CHI),2024-04,58,89.5,5.1,4.78,79,23.7
+SUP1020,Equipment Supplier 2 (CHI),2024-05,51,83.2,9.5,6.31,82,10.0
+SUP1020,Equipment Supplier 2 (CHI),2024-05,63,63.2,9.8,6.3,55,11.6
+SUP1020,Equipment Supplier 2 (CHI),2024-06,53,85.8,12.5,6.08,69,9.4
+SUP1020,Equipment Supplier 2 (CHI),2024-07,38,66.1,14.6,3.8,47,22.3
+SUP1020,Equipment Supplier 2 (CHI),2024-08,36,77.2,6.9,7.62,55,15.9
+SUP1020,Equipment Supplier 2 (CHI),2024-09,50,83.9,14.5,7.1,33,12.3
+SUP1020,Equipment Supplier 2 (CHI),2024-10,57,72.9,6.0,5.34,19,21.8
+SUP1020,Equipment Supplier 2 (CHI),2024-11,56,88.0,2.7,7.38,45,10.1
+SUP1020,Equipment Supplier 2 (CHI),2024-12,47,70.8,14.5,3.22,30,15.7
+SUP1020,Equipment Supplier 2 (CHI),2025-01,42,90.0,7.1,7.32,65,23.6
+SUP1020,Equipment Supplier 2 (CHI),2025-02,64,68.9,3.2,6.67,45,10.9
+SUP1020,Equipment Supplier 2 (CHI),2025-03,62,91.2,13.9,5.24,67,20.8
+SUP1020,Equipment Supplier 2 (CHI),2025-04,43,90.3,12.7,7.55,75,19.7
+SUP1020,Equipment Supplier 2 (CHI),2025-05,64,89.4,11.3,7.08,27,21.5
+SUP1020,Equipment Supplier 2 (CHI),2025-06,57,69.1,2.9,3.66,85,19.8
+SUP1020,Equipment Supplier 2 (CHI),2025-07,49,84.3,11.9,5.31,38,17.6
+SUP1020,Equipment Supplier 2 (CHI),2025-08,60,82.4,2.0,2.0,54,11.3
+SUP1020,Equipment Supplier 2 (CHI),2025-09,37,63.9,5.2,5.85,31,21.9
+SUP1020,Equipment Supplier 2 (CHI),2025-10,56,74.4,14.2,3.89,32,10.2
+SUP1020,Equipment Supplier 2 (CHI),2025-11,56,80.8,6.3,2.61,25,13.3
+SUP1020,Equipment Supplier 2 (CHI),2025-12,40,73.8,6.9,6.76,88,9.5
+SUP1020,Equipment Supplier 2 (CHI),2026-01,65,60.8,9.3,5.09,44,23.1
+SUP1021,Equipment Supplier 3 (NIG),2024-03,34,66.9,11.1,1.77,66,22.4
+SUP1021,Equipment Supplier 3 (NIG),2024-04,39,69.1,3.2,3.26,87,12.3
+SUP1021,Equipment Supplier 3 (NIG),2024-05,42,78.4,12.1,7.46,78,12.4
+SUP1021,Equipment Supplier 3 (NIG),2024-05,42,67.1,14.3,6.6,49,15.8
+SUP1021,Equipment Supplier 3 (NIG),2024-06,35,73.4,7.6,2.05,42,29.9
+SUP1021,Equipment Supplier 3 (NIG),2024-07,29,85.4,4.5,1.85,33,10.6
+SUP1021,Equipment Supplier 3 (NIG),2024-08,28,68.2,7.9,2.36,89,23.7
+SUP1021,Equipment Supplier 3 (NIG),2024-09,34,63.0,8.1,7.04,65,23.7
+SUP1021,Equipment Supplier 3 (NIG),2024-10,42,73.4,7.5,4.98,24,11.9
+SUP1021,Equipment Supplier 3 (NIG),2024-11,21,61.8,14.1,4.03,60,29.9
+SUP1021,Equipment Supplier 3 (NIG),2024-12,50,83.5,12.4,5.82,20,10.1
+SUP1021,Equipment Supplier 3 (NIG),2025-01,36,81.7,5.9,3.46,62,12.6
+SUP1021,Equipment Supplier 3 (NIG),2025-02,48,79.6,9.5,2.45,79,19.9
+SUP1021,Equipment Supplier 3 (NIG),2025-03,30,90.7,3.7,2.88,82,18.7
+SUP1021,Equipment Supplier 3 (NIG),2025-04,28,64.1,2.6,1.46,50,25.0
+SUP1021,Equipment Supplier 3 (NIG),2025-05,49,75.1,13.7,2.47,48,20.3
+SUP1021,Equipment Supplier 3 (NIG),2025-06,33,91.2,6.1,7.96,34,21.1
+SUP1021,Equipment Supplier 3 (NIG),2025-07,49,83.0,12.4,0.9,34,11.1
+SUP1021,Equipment Supplier 3 (NIG),2025-08,25,61.3,5.4,5.79,70,12.3
+SUP1021,Equipment Supplier 3 (NIG),2025-09,48,92.5,2.5,3.17,86,19.7
+SUP1021,Equipment Supplier 3 (NIG),2025-10,35,63.9,11.4,1.61,59,11.9
+SUP1021,Equipment Supplier 3 (NIG),2025-11,47,69.9,12.9,6.12,49,21.3
+SUP1021,Equipment Supplier 3 (NIG),2025-12,41,80.5,9.6,7.79,82,25.3
+SUP1021,Equipment Supplier 3 (NIG),2026-01,25,74.6,3.0,6.26,27,27.7
+SUP1022,Equipment Supplier 4 (NIG),2024-03,35,69.9,14.8,1.41,62,21.8
+SUP1022,Equipment Supplier 4 (NIG),2024-04,65,63.7,6.2,0.72,73,26.6
+SUP1022,Equipment Supplier 4 (NIG),2024-05,56,76.8,10.2,2.52,15,16.6
+SUP1022,Equipment Supplier 4 (NIG),2024-05,36,83.0,14.4,2.94,87,12.6
+SUP1022,Equipment Supplier 4 (NIG),2024-06,62,61.7,10.4,2.92,22,24.9
+SUP1022,Equipment Supplier 4 (NIG),2024-07,52,93.3,7.0,3.49,37,14.8
+SUP1022,Equipment Supplier 4 (NIG),2024-08,59,90.3,3.2,6.89,35,17.8
+SUP1022,Equipment Supplier 4 (NIG),2024-09,47,70.0,11.8,5.41,30,16.0
+SUP1022,Equipment Supplier 4 (NIG),2024-10,60,75.1,12.5,2.83,31,17.2
+SUP1022,Equipment Supplier 4 (NIG),2024-11,38,89.1,8.7,4.17,64,19.5
+SUP1022,Equipment Supplier 4 (NIG),2024-12,53,81.0,3.2,3.67,62,22.3
+SUP1022,Equipment Supplier 4 (NIG),2025-01,48,82.1,3.2,4.35,74,23.5
+SUP1022,Equipment Supplier 4 (NIG),2025-02,55,84.0,4.0,4.21,82,11.7
+SUP1022,Equipment Supplier 4 (NIG),2025-03,49,75.3,13.8,4.08,34,29.7
+SUP1022,Equipment Supplier 4 (NIG),2025-04,56,91.6,12.9,4.42,52,21.4
+SUP1022,Equipment Supplier 4 (NIG),2025-05,52,62.7,2.6,1.31,69,18.3
+SUP1022,Equipment Supplier 4 (NIG),2025-06,49,83.1,9.4,2.4,47,21.7
+SUP1022,Equipment Supplier 4 (NIG),2025-07,59,77.6,3.5,5.46,37,25.7
+SUP1022,Equipment Supplier 4 (NIG),2025-08,61,73.8,3.1,7.08,53,16.3
+SUP1022,Equipment Supplier 4 (NIG),2025-09,58,75.9,10.7,5.18,48,16.8
+SUP1022,Equipment Supplier 4 (NIG),2025-10,64,90.5,4.4,1.89,48,27.4
+SUP1022,Equipment Supplier 4 (NIG),2025-11,38,75.2,2.2,3.46,16,13.4
+SUP1022,Equipment Supplier 4 (NIG),2025-12,50,76.1,7.3,5.43,77,16.1
+SUP1022,Equipment Supplier 4 (NIG),2026-01,61,94.1,6.7,5.55,65,26.1
+SUP1023,Equipment Supplier 5 (IND),2024-03,22,64.4,2.2,1.34,17,18.9
+SUP1023,Equipment Supplier 5 (IND),2024-04,26,90.1,4.7,5.36,45,13.7
+SUP1023,Equipment Supplier 5 (IND),2024-05,40,90.0,9.0,1.15,74,8.0
+SUP1023,Equipment Supplier 5 (IND),2024-05,33,60.8,4.2,1.64,71,24.3
+SUP1023,Equipment Supplier 5 (IND),2024-06,35,60.7,7.8,2.32,52,16.4
+SUP1023,Equipment Supplier 5 (IND),2024-07,46,73.7,6.3,1.27,70,24.6
+SUP1023,Equipment Supplier 5 (IND),2024-08,47,77.3,9.5,5.98,52,5.7
+SUP1023,Equipment Supplier 5 (IND),2024-09,32,77.0,9.7,5.09,77,9.6
+SUP1023,Equipment Supplier 5 (IND),2024-10,21,78.5,7.5,2.87,23,10.4
+SUP1023,Equipment Supplier 5 (IND),2024-11,40,74.6,8.2,4.21,59,14.0
+SUP1023,Equipment Supplier 5 (IND),2024-12,33,60.7,5.7,1.94,59,13.8
+SUP1023,Equipment Supplier 5 (IND),2025-01,36,67.7,13.8,3.04,74,7.6
+SUP1023,Equipment Supplier 5 (IND),2025-02,29,85.3,7.1,3.63,61,20.9
+SUP1023,Equipment Supplier 5 (IND),2025-03,45,94.0,4.1,2.05,26,18.3
+SUP1023,Equipment Supplier 5 (IND),2025-04,24,66.1,4.0,4.19,68,23.9
+SUP1023,Equipment Supplier 5 (IND),2025-05,35,70.6,4.7,0.85,17,12.2
+SUP1023,Equipment Supplier 5 (IND),2025-06,28,72.5,4.1,6.71,79,5.6
+SUP1023,Equipment Supplier 5 (IND),2025-07,22,71.8,3.5,2.2,86,9.5
+SUP1023,Equipment Supplier 5 (IND),2025-08,28,94.8,12.2,6.27,86,10.3
+SUP1023,Equipment Supplier 5 (IND),2025-09,24,89.9,13.4,5.03,28,19.1
+SUP1023,Equipment Supplier 5 (IND),2025-10,49,93.1,12.4,7.72,29,24.5
+SUP1023,Equipment Supplier 5 (IND),2025-11,45,81.4,12.2,7.61,86,5.8
+SUP1023,Equipment Supplier 5 (IND),2025-12,23,65.8,3.5,2.04,61,8.1
+SUP1023,Equipment Supplier 5 (IND),2026-01,29,84.8,11.9,4.24,27,8.1
+SUP1024,Equipment Supplier 6 (IND),2024-03,31,71.7,3.8,6.86,71,24.4
+SUP1024,Equipment Supplier 6 (IND),2024-04,44,86.9,5.2,6.57,58,10.7
+SUP1024,Equipment Supplier 6 (IND),2024-05,25,63.0,6.8,6.16,61,17.6
+SUP1024,Equipment Supplier 6 (IND),2024-05,27,65.3,11.8,3.66,44,7.8
+SUP1024,Equipment Supplier 6 (IND),2024-06,33,74.5,7.3,3.94,81,20.9
+SUP1024,Equipment Supplier 6 (IND),2024-07,31,93.0,7.8,6.28,81,23.9
+SUP1024,Equipment Supplier 6 (IND),2024-08,22,71.8,7.2,6.29,70,6.2
+SUP1024,Equipment Supplier 6 (IND),2024-09,44,61.3,14.0,1.63,88,6.2
+SUP1024,Equipment Supplier 6 (IND),2024-10,40,94.3,12.4,7.07,52,13.4
+SUP1024,Equipment Supplier 6 (IND),2024-11,48,83.8,9.2,2.78,55,23.2
+SUP1024,Equipment Supplier 6 (IND),2024-12,20,88.9,13.7,5.08,33,19.0
+SUP1024,Equipment Supplier 6 (IND),2025-01,34,82.5,13.5,5.18,71,18.9
+SUP1024,Equipment Supplier 6 (IND),2025-02,48,88.4,10.4,6.32,53,6.7
+SUP1024,Equipment Supplier 6 (IND),2025-03,37,71.7,11.4,6.05,31,15.4
+SUP1024,Equipment Supplier 6 (IND),2025-04,37,69.9,3.2,4.64,81,11.8
+SUP1024,Equipment Supplier 6 (IND),2025-05,40,65.6,2.4,6.47,90,10.2
+SUP1024,Equipment Supplier 6 (IND),2025-06,46,87.1,11.4,7.9,29,19.6
+SUP1024,Equipment Supplier 6 (IND),2025-07,46,73.1,10.2,3.16,21,20.1
+SUP1024,Equipment Supplier 6 (IND),2025-08,50,64.4,5.9,6.03,73,11.8
+SUP1024,Equipment Supplier 6 (IND),2025-09,27,88.2,14.9,4.74,83,21.9
+SUP1024,Equipment Supplier 6 (IND),2025-10,27,72.3,5.7,6.39,88,18.4
+SUP1024,Equipment Supplier 6 (IND),2025-11,42,73.2,11.6,1.29,81,16.6
+SUP1024,Equipment Supplier 6 (IND),2025-12,46,87.2,7.9,1.6,69,21.6
+SUP1024,Equipment Supplier 6 (IND),2026-01,22,63.2,7.5,1.48,42,13.9
+SUP1025,Equipment Supplier 7 (GER),2024-03,66,83.7,7.2,4.69,65,22.4
+SUP1025,Equipment Supplier 7 (GER),2024-04,73,77.5,7.5,3.8,77,19.6
+SUP1025,Equipment Supplier 7 (GER),2024-05,68,88.8,3.9,1.45,73,7.6
+SUP1025,Equipment Supplier 7 (GER),2024-05,77,78.0,8.9,5.71,73,14.5
+SUP1025,Equipment Supplier 7 (GER),2024-06,78,65.5,9.3,7.41,30,17.0
+SUP1025,Equipment Supplier 7 (GER),2024-07,68,63.9,6.8,2.67,81,8.1
+SUP1025,Equipment Supplier 7 (GER),2024-08,66,70.7,6.9,2.7,18,20.8
+SUP1025,Equipment Supplier 7 (GER),2024-09,59,87.4,7.5,7.53,54,22.8
+SUP1025,Equipment Supplier 7 (GER),2024-10,61,66.4,11.6,0.52,85,12.0
+SUP1025,Equipment Supplier 7 (GER),2024-11,82,61.6,8.3,2.82,72,23.0
+SUP1025,Equipment Supplier 7 (GER),2024-12,80,73.2,12.8,6.75,31,20.2
+SUP1025,Equipment Supplier 7 (GER),2025-01,71,82.3,11.9,5.5,34,22.3
+SUP1025,Equipment Supplier 7 (GER),2025-02,65,63.1,10.1,5.18,64,9.7
+SUP1025,Equipment Supplier 7 (GER),2025-03,67,71.9,2.6,5.53,71,19.7
+SUP1025,Equipment Supplier 7 (GER),2025-04,75,63.1,4.2,0.69,54,16.2
+SUP1025,Equipment Supplier 7 (GER),2025-05,58,82.5,3.1,7.66,84,16.5
+SUP1025,Equipment Supplier 7 (GER),2025-06,56,93.5,8.8,6.13,79,22.9
+SUP1025,Equipment Supplier 7 (GER),2025-07,58,83.0,8.9,7.72,50,20.7
+SUP1025,Equipment Supplier 7 (GER),2025-08,62,89.0,12.9,4.85,25,21.1
+SUP1025,Equipment Supplier 7 (GER),2025-09,74,71.2,9.7,4.19,17,11.8
+SUP1025,Equipment Supplier 7 (GER),2025-10,60,74.5,13.2,2.88,47,6.8
+SUP1025,Equipment Supplier 7 (GER),2025-11,58,79.0,5.7,1.87,26,8.1
+SUP1025,Equipment Supplier 7 (GER),2025-12,85,74.3,4.2,5.11,56,8.6
+SUP1025,Equipment Supplier 7 (GER),2026-01,77,62.0,7.1,2.9,67,22.9
+SUP1026,Equipment Supplier 8 (NIG),2024-03,63,73.1,12.8,1.41,40,14.8
+SUP1026,Equipment Supplier 8 (NIG),2024-04,74,80.5,8.4,6.14,64,29.0
+SUP1026,Equipment Supplier 8 (NIG),2024-05,63,62.1,8.0,3.55,76,10.6
+SUP1026,Equipment Supplier 8 (NIG),2024-05,75,68.2,13.5,2.52,90,23.5
+SUP1026,Equipment Supplier 8 (NIG),2024-06,62,86.7,10.5,1.44,87,18.1
+SUP1026,Equipment Supplier 8 (NIG),2024-07,57,89.6,8.5,6.37,33,17.5
+SUP1026,Equipment Supplier 8 (NIG),2024-08,60,87.4,9.0,3.68,86,19.0
+SUP1026,Equipment Supplier 8 (NIG),2024-09,55,88.4,14.5,5.16,36,10.0
+SUP1026,Equipment Supplier 8 (NIG),2024-10,84,92.3,5.6,2.38,63,30.0
+SUP1026,Equipment Supplier 8 (NIG),2024-11,81,82.1,9.6,4.33,20,13.2
+SUP1026,Equipment Supplier 8 (NIG),2024-12,72,79.7,5.9,3.46,30,26.6
+SUP1026,Equipment Supplier 8 (NIG),2025-01,78,79.5,5.6,3.74,79,29.1
+SUP1026,Equipment Supplier 8 (NIG),2025-02,65,90.9,14.3,5.26,72,15.5
+SUP1026,Equipment Supplier 8 (NIG),2025-03,76,94.4,6.4,3.95,57,10.3
+SUP1026,Equipment Supplier 8 (NIG),2025-04,77,64.7,14.0,5.07,15,28.0
+SUP1026,Equipment Supplier 8 (NIG),2025-05,76,66.1,9.2,5.72,77,25.2
+SUP1026,Equipment Supplier 8 (NIG),2025-06,72,62.8,13.4,5.38,83,10.6
+SUP1026,Equipment Supplier 8 (NIG),2025-07,81,88.6,7.8,1.43,63,26.5
+SUP1026,Equipment Supplier 8 (NIG),2025-08,66,73.5,12.9,6.59,16,12.5
+SUP1026,Equipment Supplier 8 (NIG),2025-09,66,92.8,7.8,2.16,17,25.2
+SUP1026,Equipment Supplier 8 (NIG),2025-10,76,92.2,6.7,1.17,53,26.2
+SUP1026,Equipment Supplier 8 (NIG),2025-11,62,68.2,8.4,3.22,50,19.9
+SUP1026,Equipment Supplier 8 (NIG),2025-12,77,84.7,4.7,1.97,65,12.2
+SUP1026,Equipment Supplier 8 (NIG),2026-01,63,79.9,8.4,4.64,87,23.4
+SUP1027,Equipment Supplier 9 (IND),2024-03,54,79.8,2.8,1.46,23,7.5
+SUP1027,Equipment Supplier 9 (IND),2024-04,64,79.9,5.0,4.42,50,8.8
+SUP1027,Equipment Supplier 9 (IND),2024-05,56,60.8,14.6,5.58,47,18.6
+SUP1027,Equipment Supplier 9 (IND),2024-05,63,75.9,14.2,5.31,21,22.1
+SUP1027,Equipment Supplier 9 (IND),2024-06,45,75.1,14.9,2.56,81,14.3
+SUP1027,Equipment Supplier 9 (IND),2024-07,46,78.1,2.6,5.91,21,10.6
+SUP1027,Equipment Supplier 9 (IND),2024-08,48,78.6,6.1,3.44,57,6.6
+SUP1027,Equipment Supplier 9 (IND),2024-09,53,88.3,14.9,2.19,69,24.2
+SUP1027,Equipment Supplier 9 (IND),2024-10,64,68.7,4.1,2.83,27,5.6
+SUP1027,Equipment Supplier 9 (IND),2024-11,48,88.3,9.7,5.2,57,21.8
+SUP1027,Equipment Supplier 9 (IND),2024-12,42,63.8,5.1,3.06,21,21.4
+SUP1027,Equipment Supplier 9 (IND),2025-01,51,87.8,14.3,6.32,71,20.3
+SUP1027,Equipment Supplier 9 (IND),2025-02,55,75.6,3.6,7.81,19,12.5
+SUP1027,Equipment Supplier 9 (IND),2025-03,63,89.7,2.8,1.46,71,6.1
+SUP1027,Equipment Supplier 9 (IND),2025-04,54,81.9,2.9,5.58,86,6.0
+SUP1027,Equipment Supplier 9 (IND),2025-05,62,73.4,3.2,6.14,44,22.3
+SUP1027,Equipment Supplier 9 (IND),2025-06,60,83.1,2.1,3.38,69,22.6
+SUP1027,Equipment Supplier 9 (IND),2025-07,54,63.5,10.5,5.57,18,14.1
+SUP1027,Equipment Supplier 9 (IND),2025-08,45,80.6,3.4,0.59,23,16.9
+SUP1027,Equipment Supplier 9 (IND),2025-09,61,66.8,9.5,5.28,47,12.1
+SUP1027,Equipment Supplier 9 (IND),2025-10,50,85.4,7.8,2.32,20,6.2
+SUP1027,Equipment Supplier 9 (IND),2025-11,44,80.5,8.7,5.39,60,11.2
+SUP1027,Equipment Supplier 9 (IND),2025-12,63,78.9,3.9,4.02,58,10.8
+SUP1027,Equipment Supplier 9 (IND),2026-01,35,78.1,10.5,1.58,45,15.1
+SUP1028,Services Supplier 1 (CHI),2024-03,61,79.6,2.7,3.08,40,17.8
+SUP1028,Services Supplier 1 (CHI),2024-04,41,87.5,6.4,5.51,74,17.0
+SUP1028,Services Supplier 1 (CHI),2024-05,45,89.8,9.4,3.02,53,13.4
+SUP1028,Services Supplier 1 (CHI),2024-05,40,63.7,13.4,7.33,78,9.4
+SUP1028,Services Supplier 1 (CHI),2024-06,35,82.4,11.0,4.0,42,9.8
+SUP1028,Services Supplier 1 (CHI),2024-07,58,86.9,12.6,6.55,63,9.1
+SUP1028,Services Supplier 1 (CHI),2024-08,40,88.9,2.1,0.57,60,5.6
+SUP1028,Services Supplier 1 (CHI),2024-09,38,65.0,7.7,5.24,61,5.9
+SUP1028,Services Supplier 1 (CHI),2024-10,35,67.0,5.7,2.14,48,19.4
+SUP1028,Services Supplier 1 (CHI),2024-11,45,89.7,5.2,1.97,37,21.9
+SUP1028,Services Supplier 1 (CHI),2024-12,64,63.5,12.8,1.53,29,11.8
+SUP1028,Services Supplier 1 (CHI),2025-01,41,70.7,5.1,6.57,36,23.8
+SUP1028,Services Supplier 1 (CHI),2025-02,60,94.9,13.5,7.09,23,7.4
+SUP1028,Services Supplier 1 (CHI),2025-03,63,92.3,12.3,1.94,63,18.9
+SUP1028,Services Supplier 1 (CHI),2025-04,45,81.0,14.7,2.33,20,20.3
+SUP1028,Services Supplier 1 (CHI),2025-05,53,66.6,9.0,6.42,56,9.9
+SUP1028,Services Supplier 1 (CHI),2025-06,55,87.8,13.3,6.89,89,22.7
+SUP1028,Services Supplier 1 (CHI),2025-07,41,85.5,12.2,6.43,23,8.3
+SUP1028,Services Supplier 1 (CHI),2025-08,47,86.3,10.4,4.32,78,15.4
+SUP1028,Services Supplier 1 (CHI),2025-09,40,71.3,6.9,5.71,78,14.5
+SUP1028,Services Supplier 1 (CHI),2025-10,53,74.0,14.0,4.88,19,9.1
+SUP1028,Services Supplier 1 (CHI),2025-11,63,67.1,13.2,3.47,54,13.5
+SUP1028,Services Supplier 1 (CHI),2025-12,47,80.0,14.2,3.31,85,6.7
+SUP1028,Services Supplier 1 (CHI),2026-01,59,62.9,7.8,3.14,89,5.8
+SUP1029,Services Supplier 2 (NIG),2024-03,71,81.7,7.5,4.01,67,17.4
+SUP1029,Services Supplier 2 (NIG),2024-04,70,71.1,7.0,1.85,44,15.3
+SUP1029,Services Supplier 2 (NIG),2024-05,57,72.6,3.1,6.82,80,20.9
+SUP1029,Services Supplier 2 (NIG),2024-05,57,87.5,14.0,1.24,24,17.2
+SUP1029,Services Supplier 2 (NIG),2024-06,72,67.0,4.6,2.97,53,24.9
+SUP1029,Services Supplier 2 (NIG),2024-07,79,83.9,5.6,5.79,32,30.0
+SUP1029,Services Supplier 2 (NIG),2024-08,79,85.1,9.1,2.46,53,15.6
+SUP1029,Services Supplier 2 (NIG),2024-09,66,87.4,7.2,3.54,89,25.2
+SUP1029,Services Supplier 2 (NIG),2024-10,55,76.5,8.7,6.21,34,27.3
+SUP1029,Services Supplier 2 (NIG),2024-11,62,67.9,11.7,4.06,81,21.7
+SUP1029,Services Supplier 2 (NIG),2024-12,72,86.5,11.4,3.96,25,16.3
+SUP1029,Services Supplier 2 (NIG),2025-01,61,75.0,14.2,3.63,71,19.0
+SUP1029,Services Supplier 2 (NIG),2025-02,72,61.1,3.8,7.05,54,28.9
+SUP1029,Services Supplier 2 (NIG),2025-03,55,77.5,10.6,3.16,43,18.4
+SUP1029,Services Supplier 2 (NIG),2025-04,76,86.3,11.9,5.68,53,16.5
+SUP1029,Services Supplier 2 (NIG),2025-05,55,79.9,2.4,1.54,57,21.4
+SUP1029,Services Supplier 2 (NIG),2025-06,80,81.1,9.9,7.0,63,14.1
+SUP1029,Services Supplier 2 (NIG),2025-07,67,62.2,7.0,4.06,57,21.4
+SUP1029,Services Supplier 2 (NIG),2025-08,69,82.4,6.0,1.79,85,13.6
+SUP1029,Services Supplier 2 (NIG),2025-09,81,84.1,8.4,1.9,23,28.2
+SUP1029,Services Supplier 2 (NIG),2025-10,67,69.9,5.0,5.45,23,19.1
+SUP1029,Services Supplier 2 (NIG),2025-11,66,78.1,4.2,6.95,67,17.8
+SUP1029,Services Supplier 2 (NIG),2025-12,58,64.5,7.4,6.07,64,29.1
+SUP1029,Services Supplier 2 (NIG),2026-01,82,67.2,13.3,2.82,75,13.2
+SUP1030,Services Supplier 3 (CHI),2024-03,53,92.9,9.6,4.27,73,10.5
+SUP1030,Services Supplier 3 (CHI),2024-04,35,94.7,7.8,6.68,46,15.5
+SUP1030,Services Supplier 3 (CHI),2024-05,64,79.9,8.4,3.97,20,19.7
+SUP1030,Services Supplier 3 (CHI),2024-05,44,82.6,13.9,3.1,53,12.8
+SUP1030,Services Supplier 3 (CHI),2024-06,61,88.3,4.3,2.37,70,14.2
+SUP1030,Services Supplier 3 (CHI),2024-07,64,83.1,11.1,1.22,20,9.8
+SUP1030,Services Supplier 3 (CHI),2024-08,62,65.5,13.5,4.53,23,19.0
+SUP1030,Services Supplier 3 (CHI),2024-09,58,91.6,13.8,3.58,85,7.4
+SUP1030,Services Supplier 3 (CHI),2024-10,46,62.7,3.4,6.25,56,13.2
+SUP1030,Services Supplier 3 (CHI),2024-11,40,68.8,8.6,3.97,24,17.8
+SUP1030,Services Supplier 3 (CHI),2024-12,56,86.2,7.0,6.09,39,12.9
+SUP1030,Services Supplier 3 (CHI),2025-01,35,68.8,11.2,1.52,74,14.7
+SUP1030,Services Supplier 3 (CHI),2025-02,37,62.9,10.5,5.85,71,7.8
+SUP1030,Services Supplier 3 (CHI),2025-03,61,69.8,4.1,6.79,27,8.5
+SUP1030,Services Supplier 3 (CHI),2025-04,38,78.7,7.1,1.08,16,18.5
+SUP1030,Services Supplier 3 (CHI),2025-05,39,75.4,4.3,5.86,83,9.3
+SUP1030,Services Supplier 3 (CHI),2025-06,57,61.7,10.3,4.42,28,12.8
+SUP1030,Services Supplier 3 (CHI),2025-07,44,75.5,9.8,0.86,63,20.3
+SUP1030,Services Supplier 3 (CHI),2025-08,64,68.7,13.8,2.0,17,13.4
+SUP1030,Services Supplier 3 (CHI),2025-09,35,71.8,4.5,5.52,43,24.2
+SUP1030,Services Supplier 3 (CHI),2025-10,38,87.9,12.8,1.76,36,5.9
+SUP1030,Services Supplier 3 (CHI),2025-11,51,63.8,6.3,4.72,39,17.5
+SUP1030,Services Supplier 3 (CHI),2025-12,64,79.0,14.2,1.41,42,7.1
+SUP1030,Services Supplier 3 (CHI),2026-01,45,66.1,7.2,2.87,64,9.3
+SUP1031,Services Supplier 4 (NIG),2024-03,62,62.3,12.6,5.37,62,10.9
+SUP1031,Services Supplier 4 (NIG),2024-04,83,67.6,5.9,4.99,28,24.3
+SUP1031,Services Supplier 4 (NIG),2024-05,80,94.7,13.1,1.79,27,22.0
+SUP1031,Services Supplier 4 (NIG),2024-05,75,84.4,10.8,7.79,32,16.6
+SUP1031,Services Supplier 4 (NIG),2024-06,75,86.7,10.9,7.84,76,11.4
+SUP1031,Services Supplier 4 (NIG),2024-07,55,81.3,9.6,3.37,44,20.1
+SUP1031,Services Supplier 4 (NIG),2024-08,77,94.6,5.0,5.12,30,16.2
+SUP1031,Services Supplier 4 (NIG),2024-09,78,75.0,5.2,1.1,32,17.5
+SUP1031,Services Supplier 4 (NIG),2024-10,64,67.1,6.9,5.32,45,28.5
+SUP1031,Services Supplier 4 (NIG),2024-11,74,94.6,7.8,7.08,32,15.6
+SUP1031,Services Supplier 4 (NIG),2024-12,75,87.5,2.5,6.44,68,23.0
+SUP1031,Services Supplier 4 (NIG),2025-01,64,86.3,5.0,6.0,58,14.8
+SUP1031,Services Supplier 4 (NIG),2025-02,72,61.9,13.9,7.91,43,22.2
+SUP1031,Services Supplier 4 (NIG),2025-03,67,78.3,4.4,5.22,23,27.4
+SUP1031,Services Supplier 4 (NIG),2025-04,57,93.4,2.7,7.94,41,12.5
+SUP1031,Services Supplier 4 (NIG),2025-05,60,80.7,12.8,7.49,45,20.1
+SUP1031,Services Supplier 4 (NIG),2025-06,68,85.4,6.0,5.91,46,18.5
+SUP1031,Services Supplier 4 (NIG),2025-07,74,68.7,5.7,3.86,40,15.4
+SUP1031,Services Supplier 4 (NIG),2025-08,80,76.8,14.4,3.2,63,13.4
+SUP1031,Services Supplier 4 (NIG),2025-09,69,74.8,9.9,3.75,34,26.4
+SUP1031,Services Supplier 4 (NIG),2025-10,80,76.9,11.9,3.71,25,25.2
+SUP1031,Services Supplier 4 (NIG),2025-11,84,70.5,9.0,4.65,37,15.1
+SUP1031,Services Supplier 4 (NIG),2025-12,69,70.7,5.7,4.72,76,11.4
+SUP1031,Services Supplier 4 (NIG),2026-01,59,85.0,4.5,7.37,15,10.3
+SUP1032,Services Supplier 5 (NIG),2024-03,71,85.6,6.9,3.53,68,28.8
+SUP1032,Services Supplier 5 (NIG),2024-04,78,73.1,8.4,5.31,90,11.4
+SUP1032,Services Supplier 5 (NIG),2024-05,83,61.4,14.0,3.39,87,13.2
+SUP1032,Services Supplier 5 (NIG),2024-05,79,75.3,5.3,7.35,59,20.2
+SUP1032,Services Supplier 5 (NIG),2024-06,70,82.2,6.8,0.93,64,28.5
+SUP1032,Services Supplier 5 (NIG),2024-07,78,68.6,8.2,7.41,61,22.6
+SUP1032,Services Supplier 5 (NIG),2024-08,76,61.0,10.7,1.61,73,28.9
+SUP1032,Services Supplier 5 (NIG),2024-09,59,68.9,9.8,7.64,35,10.2
+SUP1032,Services Supplier 5 (NIG),2024-10,79,63.2,11.3,3.38,90,29.5
+SUP1032,Services Supplier 5 (NIG),2024-11,57,78.1,4.5,3.67,69,15.1
+SUP1032,Services Supplier 5 (NIG),2024-12,64,77.5,8.9,7.15,90,16.2
+SUP1032,Services Supplier 5 (NIG),2025-01,68,86.3,14.0,7.02,28,22.7
+SUP1032,Services Supplier 5 (NIG),2025-02,79,87.9,12.6,2.52,41,28.6
+SUP1032,Services Supplier 5 (NIG),2025-03,67,84.5,2.1,1.76,77,10.0
+SUP1032,Services Supplier 5 (NIG),2025-04,57,87.1,7.4,3.63,51,24.7
+SUP1032,Services Supplier 5 (NIG),2025-05,60,66.2,4.4,1.51,77,13.6
+SUP1032,Services Supplier 5 (NIG),2025-06,85,63.9,9.4,2.09,40,11.2
+SUP1032,Services Supplier 5 (NIG),2025-07,60,88.3,4.5,7.87,67,18.8
+SUP1032,Services Supplier 5 (NIG),2025-08,84,81.9,13.3,1.75,52,11.7
+SUP1032,Services Supplier 5 (NIG),2025-09,58,69.7,6.4,4.89,76,19.7
+SUP1032,Services Supplier 5 (NIG),2025-10,79,63.5,2.8,6.14,15,23.3
+SUP1032,Services Supplier 5 (NIG),2025-11,80,94.6,3.3,4.42,15,17.5
+SUP1032,Services Supplier 5 (NIG),2025-12,71,94.5,11.9,7.49,75,25.1
+SUP1032,Services Supplier 5 (NIG),2026-01,74,75.0,6.8,7.18,55,26.3
+SUP1033,Services Supplier 6 (UK),2024-03,85,72.6,7.2,5.08,60,22.5
+SUP1033,Services Supplier 6 (UK),2024-04,80,63.5,7.9,5.74,32,5.5
+SUP1033,Services Supplier 6 (UK),2024-05,58,90.4,5.6,5.74,46,12.4
+SUP1033,Services Supplier 6 (UK),2024-05,74,84.0,13.3,4.36,39,5.1
+SUP1033,Services Supplier 6 (UK),2024-06,75,93.5,12.6,0.62,61,22.5
+SUP1033,Services Supplier 6 (UK),2024-07,80,85.8,10.8,2.25,77,13.0
+SUP1033,Services Supplier 6 (UK),2024-08,74,87.8,6.5,7.54,75,24.7
+SUP1033,Services Supplier 6 (UK),2024-09,82,84.5,3.3,3.39,39,19.2
+SUP1033,Services Supplier 6 (UK),2024-10,82,78.2,9.4,6.93,79,5.6
+SUP1033,Services Supplier 6 (UK),2024-11,70,87.9,5.9,5.55,85,24.7
+SUP1033,Services Supplier 6 (UK),2024-12,69,65.9,7.8,1.37,84,9.8
+SUP1033,Services Supplier 6 (UK),2025-01,61,66.0,14.3,5.75,28,13.7
+SUP1033,Services Supplier 6 (UK),2025-02,77,61.0,14.1,2.95,64,20.3
+SUP1033,Services Supplier 6 (UK),2025-03,62,85.2,10.7,7.64,30,18.3
+SUP1033,Services Supplier 6 (UK),2025-04,84,78.7,11.4,1.18,57,22.4
+SUP1033,Services Supplier 6 (UK),2025-05,84,80.2,14.0,0.99,58,12.5
+SUP1033,Services Supplier 6 (UK),2025-06,77,86.0,11.4,5.4,86,24.3
+SUP1033,Services Supplier 6 (UK),2025-07,68,88.3,4.9,1.37,26,7.2
+SUP1033,Services Supplier 6 (UK),2025-08,65,85.9,14.2,6.08,29,16.5
+SUP1033,Services Supplier 6 (UK),2025-09,59,89.9,14.4,4.83,15,11.2
+SUP1033,Services Supplier 6 (UK),2025-10,73,78.7,13.0,7.85,55,20.4
+SUP1033,Services Supplier 6 (UK),2025-11,80,83.8,12.4,4.4,90,9.4
+SUP1033,Services Supplier 6 (UK),2025-12,67,60.3,13.1,2.87,52,21.7
+SUP1033,Services Supplier 6 (UK),2026-01,70,83.8,3.9,2.63,19,17.0
+SUP1034,Services Supplier 7 (UK),2024-03,44,77.6,11.0,2.55,88,14.6
+SUP1034,Services Supplier 7 (UK),2024-04,61,67.5,5.8,7.75,22,24.6
+SUP1034,Services Supplier 7 (UK),2024-05,45,65.3,11.3,6.86,43,19.0
+SUP1034,Services Supplier 7 (UK),2024-05,36,92.3,12.1,6.93,65,11.0
+SUP1034,Services Supplier 7 (UK),2024-06,61,83.1,13.0,7.93,85,12.8
+SUP1034,Services Supplier 7 (UK),2024-07,48,83.7,14.9,6.18,65,6.4
+SUP1034,Services Supplier 7 (UK),2024-08,58,69.9,11.1,1.96,85,12.9
+SUP1034,Services Supplier 7 (UK),2024-09,39,71.3,12.3,6.99,21,22.0
+SUP1034,Services Supplier 7 (UK),2024-10,57,70.6,10.5,4.83,71,18.9
+SUP1034,Services Supplier 7 (UK),2024-11,44,91.4,4.7,6.53,40,19.7
+SUP1034,Services Supplier 7 (UK),2024-12,35,72.7,13.1,1.26,33,12.5
+SUP1034,Services Supplier 7 (UK),2025-01,48,83.8,4.2,0.92,60,24.5
+SUP1034,Services Supplier 7 (UK),2025-02,40,93.1,3.5,4.37,58,16.9
+SUP1034,Services Supplier 7 (UK),2025-03,39,81.9,7.3,0.75,45,12.9
+SUP1034,Services Supplier 7 (UK),2025-04,44,84.1,14.4,5.4,63,20.5
+SUP1034,Services Supplier 7 (UK),2025-05,60,83.5,3.2,3.98,63,10.5
+SUP1034,Services Supplier 7 (UK),2025-06,55,75.6,2.2,1.37,30,14.8
+SUP1034,Services Supplier 7 (UK),2025-07,56,91.8,4.9,4.9,88,14.6
+SUP1034,Services Supplier 7 (UK),2025-08,57,86.1,12.3,1.86,76,25.0
+SUP1034,Services Supplier 7 (UK),2025-09,57,75.2,9.4,1.25,23,19.3
+SUP1034,Services Supplier 7 (UK),2025-10,62,87.8,4.4,6.6,17,12.9
+SUP1034,Services Supplier 7 (UK),2025-11,61,78.8,12.6,4.16,81,21.7
+SUP1034,Services Supplier 7 (UK),2025-12,52,85.0,12.3,1.43,41,24.3
+SUP1034,Services Supplier 7 (UK),2026-01,63,64.1,13.2,5.71,15,16.1
+SUP1035,Services Supplier 8 (GER),2024-03,80,71.0,2.5,4.81,35,6.8
+SUP1035,Services Supplier 8 (GER),2024-04,63,89.8,2.5,7.85,79,11.0
+SUP1035,Services Supplier 8 (GER),2024-05,85,79.1,7.5,7.59,15,10.0
+SUP1035,Services Supplier 8 (GER),2024-05,56,93.1,8.8,6.37,83,13.9
+SUP1035,Services Supplier 8 (GER),2024-06,73,77.2,6.1,7.33,60,17.1
+SUP1035,Services Supplier 8 (GER),2024-07,71,67.3,3.3,6.65,45,5.7
+SUP1035,Services Supplier 8 (GER),2024-08,59,70.5,12.8,7.68,85,9.3
+SUP1035,Services Supplier 8 (GER),2024-09,66,69.7,11.5,3.67,85,10.1
+SUP1035,Services Supplier 8 (GER),2024-10,67,82.7,4.1,3.92,47,18.5
+SUP1035,Services Supplier 8 (GER),2024-11,85,84.3,9.0,1.03,49,24.9
+SUP1035,Services Supplier 8 (GER),2024-12,77,82.6,11.3,4.73,80,17.1
+SUP1035,Services Supplier 8 (GER),2025-01,68,88.8,6.1,6.41,63,5.5
+SUP1035,Services Supplier 8 (GER),2025-02,74,68.7,5.5,4.49,85,13.1
+SUP1035,Services Supplier 8 (GER),2025-03,65,82.4,6.7,3.0,49,7.9
+SUP1035,Services Supplier 8 (GER),2025-04,80,67.9,2.1,3.33,43,12.6
+SUP1035,Services Supplier 8 (GER),2025-05,58,87.4,3.6,4.45,54,16.8
+SUP1035,Services Supplier 8 (GER),2025-06,80,77.1,8.9,5.75,51,16.0
+SUP1035,Services Supplier 8 (GER),2025-07,74,63.5,2.6,2.88,64,8.6
+SUP1035,Services Supplier 8 (GER),2025-08,80,85.9,14.6,4.49,66,14.5
+SUP1035,Services Supplier 8 (GER),2025-09,59,69.1,10.9,5.85,31,7.9
+SUP1035,Services Supplier 8 (GER),2025-10,73,85.7,2.7,5.94,62,19.2
+SUP1035,Services Supplier 8 (GER),2025-11,62,83.7,7.4,3.93,71,24.7
+SUP1035,Services Supplier 8 (GER),2025-12,80,76.4,5.7,7.64,81,23.8
+SUP1035,Services Supplier 8 (GER),2026-01,83,92.3,5.0,5.27,26,23.9
+SUP1036,Services Supplier 9 (NIG),2024-03,68,87.0,13.0,5.26,24,24.6
+SUP1036,Services Supplier 9 (NIG),2024-04,85,63.3,9.5,1.13,51,21.1
+SUP1036,Services Supplier 9 (NIG),2024-05,70,88.3,2.1,7.61,80,28.6
+SUP1036,Services Supplier 9 (NIG),2024-05,59,76.8,8.7,7.98,83,24.0
+SUP1036,Services Supplier 9 (NIG),2024-06,67,60.5,4.5,6.74,15,24.3
+SUP1036,Services Supplier 9 (NIG),2024-07,77,78.7,6.5,7.96,82,23.7
+SUP1036,Services Supplier 9 (NIG),2024-08,56,81.3,14.5,5.56,82,28.1
+SUP1036,Services Supplier 9 (NIG),2024-09,60,62.6,12.9,4.35,21,18.5
+SUP1036,Services Supplier 9 (NIG),2024-10,67,66.0,14.6,3.03,46,26.6
+SUP1036,Services Supplier 9 (NIG),2024-11,82,86.8,3.5,2.74,52,15.3
+SUP1036,Services Supplier 9 (NIG),2024-12,55,85.8,9.4,2.13,54,28.6
+SUP1036,Services Supplier 9 (NIG),2025-01,85,82.5,12.7,0.77,74,27.8
+SUP1036,Services Supplier 9 (NIG),2025-02,82,77.1,6.6,5.12,57,16.0
+SUP1036,Services Supplier 9 (NIG),2025-03,58,60.2,13.6,1.9,60,10.2
+SUP1036,Services Supplier 9 (NIG),2025-04,68,77.2,3.1,4.36,34,18.2
+SUP1036,Services Supplier 9 (NIG),2025-05,84,77.1,4.0,5.42,43,19.4
+SUP1036,Services Supplier 9 (NIG),2025-06,66,70.5,7.6,1.87,49,12.2
+SUP1036,Services Supplier 9 (NIG),2025-07,69,83.0,7.7,1.55,70,10.1
+SUP1036,Services Supplier 9 (NIG),2025-08,83,90.5,4.6,1.92,20,12.7
+SUP1036,Services Supplier 9 (NIG),2025-09,68,86.0,13.7,1.7,40,29.0
+SUP1036,Services Supplier 9 (NIG),2025-10,85,83.3,5.5,3.66,85,19.9
+SUP1036,Services Supplier 9 (NIG),2025-11,76,85.0,6.2,6.23,66,20.0
+SUP1036,Services Supplier 9 (NIG),2025-12,84,86.0,12.7,1.49,28,25.9
+SUP1036,Services Supplier 9 (NIG),2026-01,59,65.4,8.5,6.26,45,11.0
+SUP1037,Services Supplier 10 (NIG),2024-03,81,72.0,14.7,6.03,70,19.6
+SUP1037,Services Supplier 10 (NIG),2024-04,64,77.0,11.9,2.36,34,24.6
+SUP1037,Services Supplier 10 (NIG),2024-05,60,68.7,12.0,6.98,46,23.3
+SUP1037,Services Supplier 10 (NIG),2024-05,68,66.9,11.2,6.57,79,22.2
+SUP1037,Services Supplier 10 (NIG),2024-06,61,94.7,9.7,5.26,44,12.4
+SUP1037,Services Supplier 10 (NIG),2024-07,67,61.3,14.9,7.47,69,10.4
+SUP1037,Services Supplier 10 (NIG),2024-08,61,63.2,2.7,3.55,54,24.0
+SUP1037,Services Supplier 10 (NIG),2024-09,62,67.8,7.5,0.96,69,22.9
+SUP1037,Services Supplier 10 (NIG),2024-10,64,63.9,6.7,7.57,68,14.9
+SUP1037,Services Supplier 10 (NIG),2024-11,83,61.7,2.5,0.89,56,14.2
+SUP1037,Services Supplier 10 (NIG),2024-12,70,69.8,9.9,3.73,47,29.0
+SUP1037,Services Supplier 10 (NIG),2025-01,66,71.7,3.4,5.52,85,25.4
+SUP1037,Services Supplier 10 (NIG),2025-02,59,71.6,11.6,3.21,90,20.6
+SUP1037,Services Supplier 10 (NIG),2025-03,66,68.3,5.6,4.88,26,27.7
+SUP1037,Services Supplier 10 (NIG),2025-04,59,82.0,9.8,0.81,39,13.9
+SUP1037,Services Supplier 10 (NIG),2025-05,69,92.4,3.0,4.6,58,16.0
+SUP1037,Services Supplier 10 (NIG),2025-06,70,94.6,4.6,5.91,20,12.6
+SUP1037,Services Supplier 10 (NIG),2025-07,68,79.3,5.3,7.08,86,29.5
+SUP1037,Services Supplier 10 (NIG),2025-08,83,72.8,10.2,1.38,70,11.4
+SUP1037,Services Supplier 10 (NIG),2025-09,68,78.3,14.4,6.43,36,22.0
+SUP1037,Services Supplier 10 (NIG),2025-10,77,93.9,5.8,7.67,22,25.9
+SUP1037,Services Supplier 10 (NIG),2025-11,77,66.7,12.6,4.21,83,27.4
+SUP1037,Services Supplier 10 (NIG),2025-12,57,65.8,11.8,3.38,64,18.0
+SUP1037,Services Supplier 10 (NIG),2026-01,63,67.2,2.0,4.79,90,23.9
+SUP1038,Services Supplier 11 (CHI),2024-03,83,92.5,8.7,4.28,82,10.2
+SUP1038,Services Supplier 11 (CHI),2024-04,82,67.7,11.2,4.64,36,9.5
+SUP1038,Services Supplier 11 (CHI),2024-05,72,68.3,2.5,1.61,50,23.5
+SUP1038,Services Supplier 11 (CHI),2024-05,63,90.6,2.7,7.85,41,15.7
+SUP1038,Services Supplier 11 (CHI),2024-06,55,82.7,10.2,7.79,56,6.7
+SUP1038,Services Supplier 11 (CHI),2024-07,77,90.9,5.4,1.5,52,11.5
+SUP1038,Services Supplier 11 (CHI),2024-08,56,81.9,2.1,3.17,50,8.5
+SUP1038,Services Supplier 11 (CHI),2024-09,55,78.8,14.7,6.34,89,7.1
+SUP1038,Services Supplier 11 (CHI),2024-10,78,84.1,14.3,2.43,85,9.1
+SUP1038,Services Supplier 11 (CHI),2024-11,69,67.7,5.5,4.86,65,8.1
+SUP1038,Services Supplier 11 (CHI),2024-12,62,85.5,7.6,1.61,76,6.9
+SUP1038,Services Supplier 11 (CHI),2025-01,60,76.1,12.6,1.82,87,14.8
+SUP1038,Services Supplier 11 (CHI),2025-02,78,66.3,5.7,2.83,37,21.3
+SUP1038,Services Supplier 11 (CHI),2025-03,76,81.3,2.9,1.04,46,14.1
+SUP1038,Services Supplier 11 (CHI),2025-04,75,94.0,3.3,4.45,16,17.1
+SUP1038,Services Supplier 11 (CHI),2025-05,67,73.4,3.4,0.6,20,7.6
+SUP1038,Services Supplier 11 (CHI),2025-06,79,62.9,3.9,5.21,16,20.8
+SUP1038,Services Supplier 11 (CHI),2025-07,55,93.5,3.4,6.02,58,22.1
+SUP1038,Services Supplier 11 (CHI),2025-08,57,67.1,8.2,4.72,71,21.3
+SUP1038,Services Supplier 11 (CHI),2025-09,64,71.6,4.0,0.92,49,17.5
+SUP1038,Services Supplier 11 (CHI),2025-10,58,60.7,2.6,4.58,28,15.2
+SUP1038,Services Supplier 11 (CHI),2025-11,81,74.5,2.0,2.18,44,13.5
+SUP1038,Services Supplier 11 (CHI),2025-12,59,72.4,5.7,7.41,64,18.7
+SUP1038,Services Supplier 11 (CHI),2026-01,77,88.8,3.5,1.77,29,9.5
+SUP1039,Services Supplier 12 (IND),2024-03,65,93.5,6.6,5.12,30,12.2
+SUP1039,Services Supplier 12 (IND),2024-04,64,92.2,13.6,5.03,37,13.6
+SUP1039,Services Supplier 12 (IND),2024-05,45,81.0,10.8,1.63,53,17.5
+SUP1039,Services Supplier 12 (IND),2024-05,44,72.2,3.4,7.37,62,23.7
+SUP1039,Services Supplier 12 (IND),2024-06,60,91.7,12.4,6.42,34,20.6
+SUP1039,Services Supplier 12 (IND),2024-07,39,71.2,7.1,5.91,76,21.3
+SUP1039,Services Supplier 12 (IND),2024-08,38,80.2,14.5,2.59,26,11.5
+SUP1039,Services Supplier 12 (IND),2024-09,39,66.4,7.0,2.89,69,14.6
+SUP1039,Services Supplier 12 (IND),2024-10,48,81.1,10.3,1.54,46,12.7
+SUP1039,Services Supplier 12 (IND),2024-11,52,77.4,8.9,4.49,44,12.7
+SUP1039,Services Supplier 12 (IND),2024-12,53,85.0,8.9,6.32,43,19.1
+SUP1039,Services Supplier 12 (IND),2025-01,42,72.7,4.6,6.88,61,16.2
+SUP1039,Services Supplier 12 (IND),2025-02,65,64.7,3.4,7.34,61,22.0
+SUP1039,Services Supplier 12 (IND),2025-03,62,87.3,3.8,3.95,85,24.4
+SUP1039,Services Supplier 12 (IND),2025-04,64,74.7,4.7,2.18,32,7.3
+SUP1039,Services Supplier 12 (IND),2025-05,57,84.6,6.9,0.7,69,12.4
+SUP1039,Services Supplier 12 (IND),2025-06,57,63.7,9.6,4.08,35,5.6
+SUP1039,Services Supplier 12 (IND),2025-07,46,64.9,5.2,0.59,68,8.0
+SUP1039,Services Supplier 12 (IND),2025-08,40,76.4,3.8,4.46,53,14.4
+SUP1039,Services Supplier 12 (IND),2025-09,58,71.8,12.2,5.71,51,7.2
+SUP1039,Services Supplier 12 (IND),2025-10,36,90.8,2.4,6.13,79,8.2
+SUP1039,Services Supplier 12 (IND),2025-11,47,89.1,10.8,7.07,85,19.2
+SUP1039,Services Supplier 12 (IND),2025-12,43,92.2,8.5,5.82,69,23.6
+SUP1039,Services Supplier 12 (IND),2026-01,43,94.1,8.8,7.83,31,19.9

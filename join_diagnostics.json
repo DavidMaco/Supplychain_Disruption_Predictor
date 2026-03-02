@@ -1,0 +1,52 @@
+{
+  "external": {
+    "rainy_season": {
+      "nulls": 0,
+      "coverage_pct": 100.0
+    },
+    "rainfall_index": {
+      "nulls": 0,
+      "coverage_pct": 100.0
+    },
+    "holiday_period": {
+      "nulls": 0,
+      "coverage_pct": 100.0
+    },
+    "port_congestion_index": {
+      "nulls": 0,
+      "coverage_pct": 100.0
+    },
+    "disruption_severity": {
+      "nulls": 0,
+      "coverage_pct": 100.0
+    }
+  },
+  "health": {
+    "financial_health_score": {
+      "nulls": 103,
+      "coverage_pct": 96.05
+    },
+    "capacity_utilization_pct": {
+      "nulls": 103,
+      "coverage_pct": 96.05
+    },
+    "employee_turnover_pct": {
+      "nulls": 103,
+      "coverage_pct": 96.05
+    },
+    "quality_defect_rate": {
+      "nulls": 103,
+      "coverage_pct": 96.05
+    },
+    "inventory_days": {
+      "nulls": 103,
+      "coverage_pct": 96.05
+    },
+    "payment_default_risk": {
+      "nulls": 103,
+      "coverage_pct": 96.05
+    }
+  },
+  "external_avg_coverage_pct": 100.0,
+  "health_avg_coverage_pct": 96.05
+}
