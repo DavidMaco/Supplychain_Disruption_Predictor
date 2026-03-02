@@ -170,8 +170,8 @@ def validate_join_coverage(
 # ---------------------------------------------------------------------------
 
 def file_hash(path: str) -> str:
-    """Return MD5 hex digest of a file for reproducibility tracking."""
-    h = hashlib.md5()
+    """Return SHA-256 hex digest of a file for reproducibility tracking."""
+    h = hashlib.sha256()
     with open(path, "rb") as f:
         for chunk in iter(lambda: f.read(8192), b""):
             h.update(chunk)
