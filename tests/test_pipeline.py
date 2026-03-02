@@ -34,6 +34,14 @@ from pipeline_utils import (
     generate_run_metadata,
 )
 
+from generate_disruption_data import (
+    generate_external_risk_factors,
+    generate_supplier_health_metrics,
+    enhance_purchase_orders_with_risk,
+    create_prediction_features,
+    _seed,
+)
+
 
 # ===================================================================
 # Fixtures
@@ -78,6 +86,23 @@ def sample_pos():
     })
 
 
+@pytest.fixture
+def enriched_data(sample_pos, sample_suppliers, sample_config):
+    """Shared fixture: run data generation through enrichment.
+
+    Returns (enhanced_df, join_diagnostics, date_range, sample_config).
+    """
+    _seed(sample_config)
+    dates = pd.to_datetime(sample_pos["po_date"])
+    date_range = pd.date_range(dates.min() - timedelta(days=2), dates.max() + timedelta(days=2))
+    risk_df = generate_external_risk_factors(date_range, sample_config)
+    health_df = generate_supplier_health_metrics(sample_suppliers, sample_config, date_range=date_range)
+    enhanced, diag = enhance_purchase_orders_with_risk(
+        sample_pos, risk_df, health_df, sample_config,
+    )
+    return enhanced, diag, date_range, sample_config
+
+
 # ===================================================================
 # Config tests
 # ===================================================================
@@ -103,7 +128,6 @@ class TestConfig:
 
 class TestDataContracts:
     def test_valid_schema_passes(self, sample_suppliers):
-        # Should not raise
         validate_dataframe_schema(
             sample_suppliers,
             ["supplier_id", "supplier_name", "risk_level", "country"],
@@ -134,31 +158,9 @@ class TestDataContracts:
 # ===================================================================
 
 class TestRiskScore:
-    def test_composite_score_range(self, sample_pos, sample_config):
+    def test_composite_score_range(self, enriched_data):
         """Composite risk score should be in [0, 100]."""
-        from generate_disruption_data import (
-            generate_external_risk_factors,
-            generate_supplier_health_metrics,
-            enhance_purchase_orders_with_risk,
-            _seed,
-        )
-
-        _seed(sample_config)
-        dates = pd.to_datetime(sample_pos["po_date"])
-        date_range = pd.date_range(dates.min() - timedelta(days=2), dates.max() + timedelta(days=2))
-        risk_df = generate_external_risk_factors(date_range, sample_config)
-
-        suppliers = pd.DataFrame({
-            "supplier_id": ["S001", "S002"],
-            "supplier_name": ["Supplier A", "Supplier B"],
-            "risk_level": ["Low", "High"],
-            "country": ["Nigeria", "China"],
-        })
-        health_df = generate_supplier_health_metrics(suppliers, sample_config)
-        enhanced, _ = enhance_purchase_orders_with_risk(
-            sample_pos, risk_df, health_df, sample_config
-        )
-
+        enhanced, _, _, _ = enriched_data
         assert enhanced["composite_risk_score"].between(0, 100).all(), \
             "Composite risk score out of [0, 100] range"
 
@@ -179,31 +181,9 @@ class TestRiskScore:
 # ===================================================================
 
 class TestFeatures:
-    def test_rolling_features_not_all_null(self, sample_pos, sample_config):
-        from generate_disruption_data import (
-            generate_external_risk_factors,
-            generate_supplier_health_metrics,
-            enhance_purchase_orders_with_risk,
-            create_prediction_features,
-            _seed,
-        )
-
-        _seed(sample_config)
-        dates = pd.to_datetime(sample_pos["po_date"])
-        date_range = pd.date_range(dates.min() - timedelta(days=2), dates.max() + timedelta(days=2))
-        risk_df = generate_external_risk_factors(date_range, sample_config)
-
-        suppliers = pd.DataFrame({
-            "supplier_id": ["S001", "S002"],
-            "supplier_name": ["Supplier A", "Supplier B"],
-            "risk_level": ["Low", "High"],
-            "country": ["Nigeria", "China"],
-        })
-        health_df = generate_supplier_health_metrics(suppliers, sample_config)
-        enhanced, _ = enhance_purchase_orders_with_risk(
-            sample_pos, risk_df, health_df, sample_config
-        )
-        features = create_prediction_features(enhanced, sample_config)
+    def test_rolling_features_not_all_null(self, enriched_data):
+        enhanced, _, _, cfg = enriched_data
+        features = create_prediction_features(enhanced, cfg)
 
         assert features["supplier_avg_delay"].notna().all()
         assert features["supplier_late_delivery_rate"].notna().all()
@@ -216,32 +196,10 @@ class TestFeatures:
 # ===================================================================
 
 class TestJoinCoverage:
-    def test_external_coverage_above_threshold(self, sample_pos, sample_config):
+    def test_external_coverage_above_threshold(self, enriched_data):
         """After date-alignment fix, external coverage should pass threshold."""
-        from generate_disruption_data import (
-            generate_external_risk_factors,
-            generate_supplier_health_metrics,
-            enhance_purchase_orders_with_risk,
-            _seed,
-        )
-
-        _seed(sample_config)
-        dates = pd.to_datetime(sample_pos["po_date"])
-        date_range = pd.date_range(dates.min() - timedelta(days=2), dates.max() + timedelta(days=2))
-        risk_df = generate_external_risk_factors(date_range, sample_config)
-
-        suppliers = pd.DataFrame({
-            "supplier_id": ["S001", "S002"],
-            "supplier_name": ["Supplier A", "Supplier B"],
-            "risk_level": ["Low", "High"],
-            "country": ["Nigeria", "China"],
-        })
-        health_df = generate_supplier_health_metrics(suppliers, sample_config)
-        _, diag = enhance_purchase_orders_with_risk(
-            sample_pos, risk_df, health_df, sample_config
-        )
-
-        min_ext = sample_config.get("data_contracts", {}).get("min_external_coverage_pct", 80)
+        _, diag, _, cfg = enriched_data
+        min_ext = cfg.get("data_contracts", {}).get("min_external_coverage_pct", 80)
         assert diag["external_avg_coverage_pct"] >= min_ext, \
             f"External coverage {diag['external_avg_coverage_pct']}% < {min_ext}%"
 
