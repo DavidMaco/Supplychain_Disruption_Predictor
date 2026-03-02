@@ -140,25 +140,36 @@ def generate_external_risk_factors(
 def generate_supplier_health_metrics(
     suppliers_df: pd.DataFrame,
     cfg: dict,
+    date_range: Optional[pd.DatetimeIndex] = None,
 ) -> pd.DataFrame:
     """Generate monthly supplier health metrics.
 
     Args:
         suppliers_df: Supplier master data.
         cfg: Loaded config dictionary.
+        date_range: Optional DatetimeIndex aligned to PO dates.
+                    If provided, months are derived from this range instead of
+                    ``datetime.now()``, ensuring deterministic output.
 
     Returns:
         DataFrame with monthly health records per supplier.
     """
-    months = cfg.get("data", {}).get("supplier_health_months", 24)
-    lookback = cfg.get("data", {}).get("lookback_days", 730)
-    start_date = datetime.now() - timedelta(days=lookback)
+    if date_range is not None:
+        # Derive distinct months from the PO-aligned date range
+        month_labels = sorted(date_range.strftime("%Y-%m").unique())
+    else:
+        months = cfg.get("data", {}).get("supplier_health_months", 24)
+        lookback = cfg.get("data", {}).get("lookback_days", 730)
+        start_date = datetime.now() - timedelta(days=lookback)
+        month_labels = [
+            (start_date + timedelta(days=m * 30)).strftime("%Y-%m")
+            for m in range(months)
+        ]
 
     records: List[dict] = []
 
     for _, supplier in suppliers_df.iterrows():
-        for month_offset in range(months):
-            record_date = start_date + timedelta(days=month_offset * 30)
+        for month_str in month_labels:
 
             base_health = (
                 70 if supplier["risk_level"] == "Low"
@@ -179,7 +190,7 @@ def generate_supplier_health_metrics(
             records.append({
                 "supplier_id": supplier["supplier_id"],
                 "supplier_name": supplier["supplier_name"],
-                "month": record_date.strftime("%Y-%m"),
+                "month": month_str,
                 "financial_health_score": round(financial_health, 1),
                 "capacity_utilization_pct": round(capacity_util, 1),
                 "employee_turnover_pct": round(turnover_rate, 1),
@@ -190,7 +201,7 @@ def generate_supplier_health_metrics(
 
     df = pd.DataFrame(records)
     logger.info("Generated %d supplier-health records for %d suppliers over %d months",
-                len(df), suppliers_df["supplier_id"].nunique(), months)
+                len(df), suppliers_df["supplier_id"].nunique(), len(month_labels))
     return df
 
 
@@ -430,8 +441,10 @@ def main() -> None:
 
     risk_factors_df = generate_external_risk_factors(full_date_range, cfg)
 
-    # --- Supplier health ---
-    supplier_health_df = generate_supplier_health_metrics(suppliers_df, cfg)
+    # --- Supplier health (aligned to PO date range) ---
+    supplier_health_df = generate_supplier_health_metrics(
+        suppliers_df, cfg, date_range=full_date_range,
+    )
 
     # --- Enrich POs ---
     enhanced_df, join_diag = enhance_purchase_orders_with_risk(
