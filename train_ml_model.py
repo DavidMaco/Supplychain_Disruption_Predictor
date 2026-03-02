@@ -396,7 +396,7 @@ def main() -> None:
     """Run the full ML training and prediction pipeline."""
     cfg = load_config()
     seed = cfg.get("random_seed", 42)
-    np.random.seed(seed)
+    # sklearn uses random_state=seed explicitly; no global seed needed.
 
     outputs = cfg.get("outputs", {})
 

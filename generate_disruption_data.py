@@ -38,11 +38,14 @@ _PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 logger = setup_logging("data_generator")
 
 
-def _seed(cfg: dict) -> None:
-    """Set global random seeds from config."""
+def _seed(cfg: dict) -> random.Random:
+    """Create a seeded Random instance from config.
+
+    Returns a ``random.Random`` generator so all downstream functions use
+    explicit local state rather than the global ``random`` module.
+    """
     seed = cfg.get("random_seed", 42)
-    np.random.seed(seed)
-    random.seed(seed)
+    return random.Random(seed)
 
 
 # ===================================================================
@@ -52,6 +55,7 @@ def _seed(cfg: dict) -> None:
 def generate_external_risk_factors(
     date_range: pd.DatetimeIndex,
     cfg: dict,
+    rng: Optional[random.Random] = None,
 ) -> pd.DataFrame:
     """Generate daily external risk factors covering *date_range*.
 
@@ -61,10 +65,14 @@ def generate_external_risk_factors(
     Args:
         date_range: DatetimeIndex of dates to generate factors for.
         cfg: Loaded config dictionary.
+        rng: Optional seeded ``random.Random`` instance. Falls back to a
+             default instance seeded from config if not provided.
 
     Returns:
         DataFrame with one row per date and risk-factor columns.
     """
+    if rng is None:
+        rng = _seed(cfg)
     ext = cfg.get("external_risk", {})
     rainy_months: List[int] = ext.get("rainy_months", [4, 5, 6, 7, 8, 9, 10])
     holiday_months: List[int] = ext.get("holiday_months", [12, 1])
@@ -91,29 +99,29 @@ def generate_external_risk_factors(
 
         rainy_season = 1 if month in rainy_months else 0
         rainfall_index = (
-            random.uniform(*rain_rainy) if rainy_season else random.uniform(*rain_dry)
+            rng.uniform(*rain_rainy) if rainy_season else rng.uniform(*rain_dry)
         )
         holiday_period = 1 if month in holiday_months else 0
 
-        fuel_price = (base_fuel + day_offset * fuel_inc) * random.uniform(*fuel_vol)
-        fx_rate = (base_fx + day_offset * fx_dep) * random.uniform(*fx_vol)
+        fuel_price = (base_fuel + day_offset * fuel_inc) * rng.uniform(*fuel_vol)
+        fx_rate = (base_fx + day_offset * fx_dep) * rng.uniform(*fx_vol)
 
         congestion = base_cong
         if rainy_season:
             congestion += rainy_cong_add
         if holiday_period:
             congestion += holiday_cong_add
-        port_congestion = min(100, congestion * random.uniform(*cong_mult))
+        port_congestion = min(100, congestion * rng.uniform(*cong_mult))
 
-        has_disruption = random.random() < disruption_prob
+        has_disruption = rng.random() < disruption_prob
         disruption_type = (
-            random.choice([
+            rng.choice([
                 "Strike", "Weather Event", "Political Unrest",
                 "Port Closure", "Customs Delay",
             ])
             if has_disruption else "None"
         )
-        disruption_severity = random.randint(1, 10) if has_disruption else 0
+        disruption_severity = rng.randint(1, 10) if has_disruption else 0
 
         records.append({
             "date": date.strftime("%Y-%m-%d"),
@@ -141,6 +149,7 @@ def generate_supplier_health_metrics(
     suppliers_df: pd.DataFrame,
     cfg: dict,
     date_range: Optional[pd.DatetimeIndex] = None,
+    rng: Optional[random.Random] = None,
 ) -> pd.DataFrame:
     """Generate monthly supplier health metrics.
 
@@ -150,10 +159,13 @@ def generate_supplier_health_metrics(
         date_range: Optional DatetimeIndex aligned to PO dates.
                     If provided, months are derived from this range instead of
                     ``datetime.now()``, ensuring deterministic output.
+        rng: Optional seeded ``random.Random`` instance.
 
     Returns:
         DataFrame with monthly health records per supplier.
     """
+    if rng is None:
+        rng = _seed(cfg)
     if date_range is not None:
         # Derive distinct months from the PO-aligned date range
         month_labels = sorted(date_range.strftime("%Y-%m").unique())
@@ -176,15 +188,15 @@ def generate_supplier_health_metrics(
                 else 50 if supplier["risk_level"] == "Medium"
                 else 35
             )
-            financial_health = max(0, min(100, base_health + random.randint(-15, 15)))
-            capacity_util = random.uniform(60, 95)
-            turnover_rate = random.uniform(2, 15)
-            defect_rate = random.uniform(0.5, 8.0)
-            inventory_days = random.randint(15, 90)
+            financial_health = max(0, min(100, base_health + rng.randint(-15, 15)))
+            capacity_util = rng.uniform(60, 95)
+            turnover_rate = rng.uniform(2, 15)
+            defect_rate = rng.uniform(0.5, 8.0)
+            inventory_days = rng.randint(15, 90)
             default_risk = (
-                random.uniform(10, 30)
+                rng.uniform(10, 30)
                 if supplier["country"] == "Nigeria"
-                else random.uniform(5, 25)
+                else rng.uniform(5, 25)
             )
 
             records.append({
@@ -384,7 +396,7 @@ def create_prediction_features(df: pd.DataFrame, cfg: dict) -> pd.DataFrame:
 def main() -> None:
     """Run the full data-generation pipeline."""
     cfg = load_config()
-    _seed(cfg)
+    rng = _seed(cfg)
 
     data_cfg = cfg.get("data", {})
     src = data_cfg.get("source_files", {})
@@ -441,11 +453,11 @@ def main() -> None:
     logger.info("Risk-factor date range: %s -> %s (%d days)",
                 min_date.date(), max_date.date(), len(full_date_range))
 
-    risk_factors_df = generate_external_risk_factors(full_date_range, cfg)
+    risk_factors_df = generate_external_risk_factors(full_date_range, cfg, rng=rng)
 
     # --- Supplier health (aligned to PO date range) ---
     supplier_health_df = generate_supplier_health_metrics(
-        suppliers_df, cfg, date_range=full_date_range,
+        suppliers_df, cfg, date_range=full_date_range, rng=rng,
     )
 
     # --- Enrich POs ---

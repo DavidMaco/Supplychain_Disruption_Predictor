@@ -92,11 +92,11 @@ def enriched_data(sample_pos, sample_suppliers, sample_config):
 
     Returns (enhanced_df, join_diagnostics, date_range, sample_config).
     """
-    _seed(sample_config)
+    rng = _seed(sample_config)
     dates = pd.to_datetime(sample_pos["po_date"])
     date_range = pd.date_range(dates.min() - timedelta(days=2), dates.max() + timedelta(days=2))
-    risk_df = generate_external_risk_factors(date_range, sample_config)
-    health_df = generate_supplier_health_metrics(sample_suppliers, sample_config, date_range=date_range)
+    risk_df = generate_external_risk_factors(date_range, sample_config, rng=rng)
+    health_df = generate_supplier_health_metrics(sample_suppliers, sample_config, date_range=date_range, rng=rng)
     enhanced, diag = enhance_purchase_orders_with_risk(
         sample_pos, risk_df, health_df, sample_config,
     )
