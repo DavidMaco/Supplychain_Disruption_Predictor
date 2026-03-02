@@ -1,130 +1,190 @@
-# Implementation Report — Supply Chain Disruption Predictor
+<div align="center">
 
-**Date**: 2025-07-15  
-**Scope**: Full 8-route feasibility hardening (integrity → reproducibility → optimisation)
+# 📋 Implementation Report
 
----
+### Supply Chain Disruption Predictor — Pipeline Hardening
 
-## Summary
+[![Status: Complete](https://img.shields.io/badge/status-complete-brightgreen?style=flat-square)]()
+[![Routes: 8/8](https://img.shields.io/badge/routes-8%2F8-blue?style=flat-square)]()
+[![Tests: 15 passed](https://img.shields.io/badge/tests-15%20passed-brightgreen?style=flat-square)]()
 
-All 8 implementation routes are complete. The pipeline now has:
-
-- A **fixed external-risk join** (the root-cause of 0 % external feature importance)
-- **Centralised YAML configuration** with externalised thresholds, weights, and assumptions
-- **Structured logging** and **data-contract validation** at every pipeline stage
-- **Separated technical metrics** (`model_metrics.json`) from **scenario-based business impact** (`business_impact.json`)
-- A **claim-evidence validator** that maps README headline numbers to their source artefacts
-- A **truthful README** with explicit assumptions, limitations, and correct project structure
-- **15 unit/integration tests** (all passing, zero warnings)
-- A **GitHub Actions CI workflow** for automated testing on push/PR
+</div>
 
 ---
 
-## Files Created (new)
+## Executive Summary
+
+All **8 implementation routes** are complete. The pipeline was hardened from an initial prototype
+with a critical data-quality bug (100 % null external features) into a reproducible, tested,
+and truthfully documented system.
+
+| Area | Before | After |
+|:-----|:-------|:------|
+| External feature importance | **0 %** (all nulls) | **13.7 %** combined |
+| Configuration | Hardcoded magic numbers | Centralised `config.yaml` |
+| Logging | `print()` statements | Structured logging with levels |
+| Data validation | None | Schema contracts + join coverage checks |
+| Metrics reporting | Single mixed JSON | Separated technical + business files |
+| Test coverage | 0 tests | 15 unit/integration tests |
+| CI | None | GitHub Actions (3 Python versions) |
+| README accuracy | Fictional numbers | Evidence-backed with `validate_claims.py` |
+
+---
+
+## Files Overview
+
+<table>
+<tr>
+<td valign="top" width="50%">
+
+### 🆕 &nbsp; Created
 
 | File | Purpose |
-|------|---------|
-| `config.yaml` | Centralised pipeline configuration (seed, weights, thresholds, assumptions, paths) |
-| `pipeline_utils.py` | Shared utilities: config loader, logging, schema validation, join-coverage checks, file hashing, run metadata |
-| `validate_claims.py` | Maps README claims to artefact evidence; outputs `claim_evidence.json` |
-| `requirements.txt` | Pinned dependency manifest |
-| `tests/test_pipeline.py` | 15 unit & integration tests covering config, contracts, risk scores, features, joins, reproducibility, smoke |
-| `.github/workflows/ci.yml` | GitHub Actions CI (test + lint across Python 3.10/3.11/3.12) |
-| `IMPLEMENTATION_REPORT.md` | This file |
+|:-----|:--------|
+| `config.yaml` | Centralised pipeline config |
+| `pipeline_utils.py` | Shared utilities & contracts |
+| `validate_claims.py` | Claim → artefact evidence mapper |
+| `requirements.txt` | Pinned dependencies |
+| `tests/test_pipeline.py` | 15 unit & integration tests |
+| `tests/__init__.py` | Package marker |
+| `.github/workflows/ci.yml` | CI workflow |
 
-## Files Rewritten
+</td>
+<td valign="top" width="50%">
+
+### ♻️ &nbsp; Rewritten
 
 | File | Key Changes |
-|------|-------------|
-| `generate_disruption_data.py` | Date-aligned external risk factors, config-driven, structured logging, join diagnostics, data contracts, type hints |
-| `train_ml_model.py` | Full sklearn metrics (accuracy, precision, recall, F1, ROC-AUC, CV), separated business impact, config-driven thresholds, type hints |
-| `PROJECT2_README.md` | Truthful structure, correct run commands, scenario-labelled financials, assumptions table, limitations section, roadmap |
+|:-----|:------------|
+| `generate_disruption_data.py` | Date-aligned joins, local RNG, data contracts |
+| `train_ml_model.py` | Full sklearn metrics, separated business impact |
+| `README.md` | Visual redesign, evidence-backed claims |
+
+</td>
+</tr>
+</table>
 
 ---
 
 ## Route-by-Route Status
 
-### Route 1 — Data Integrity Fix
-**Status**: COMPLETE  
-- `generate_external_risk_factors()` now accepts an explicit `date_range` parameter derived from PO dates with a 7-day buffer.
-- Eliminates the `datetime.now()` drift that produced 100 % null external features.
-- Join diagnostics saved to `join_diagnostics.json`.
+### Route 1 — Data Integrity Fix &nbsp; ✅
 
-### Route 2 — Metric Integrity
-**Status**: COMPLETE  
-- `train_ml_model.py` now saves `model_metrics.json` with accuracy, precision/recall/F1 per class, ROC-AUC, confusion matrix, 5-fold stratified CV scores.
-- Business impact saved separately to `business_impact.json` with `_disclaimer` and `assumptions` fields.
+> **Root cause**: `generate_external_risk_factors()` used `datetime.now()` to build the date range,
+> producing dates in 2025 while PO dates spanned 2023–2024. After the left join, all external
+> columns were `NaN`.
 
-### Route 3 — Reproducibility
-**Status**: COMPLETE  
-- `config.yaml` externalises all tuneable parameters (seed, weights, thresholds, assumptions, file paths).
-- `run_metadata.json` captures timestamp, Python version, package versions, data fingerprints (MD5), and config snapshot.
-- `requirements.txt` pins dependency ranges.
+**Fix**: Accept an explicit `date_range` parameter derived from PO dates with a 7-day buffer.
+Join diagnostics validated via `join_diagnostics.json`.
 
-### Route 4 — Code Quality
-**Status**: COMPLETE  
-- All functions have type hints and docstrings.
-- Structured logging replaces `print()`.
-- Function signatures accept config dict (no global state).
-- FutureWarning-clean (chained assignment replaced with explicit assignment).
-
-### Route 5 — Test Harness
-**Status**: COMPLETE  
-- 15 tests across 6 test classes.
-- Covers: config loading, schema validation, join coverage, composite risk score range, rolling features, file hashing, run metadata, smoke pipeline.
-- All 15 pass with zero warnings.
-
-### Route 6 — CI Pipeline
-**Status**: COMPLETE  
-- `.github/workflows/ci.yml` runs on push/PR affecting the project directory.
-- Matrix: Python 3.10, 3.11, 3.12.
-- Steps: install deps → pytest → flake8 lint.
-
-### Route 7 — Claim Evidence
-**Status**: COMPLETE  
-- `validate_claims.py` checks 7 claims against artefact files.
-- Labels each as VERIFIED, ASSUMPTION, UNVERIFIED, or LIKELY_ARTIFACT.
-- Outputs `claim_evidence.json`.
-
-### Route 8 — README Truthfulness
-**Status**: COMPLETE  
-- Flat directory structure documented (no fictional `scripts/`, `data/`, `models/` subdirs).
-- Run commands corrected (`python generate_disruption_data.py`, not `python scripts/...`).
-- ₦65.9 M savings relabelled as "scenario-based estimate" with explicit assumptions table.
-- "External events 0 % importance" reframed as data-quality artefact.
-- "2–4 weeks early warning" listed as unverified.
-- Added Known Limitations and Roadmap sections.
+```
+External coverage:  100.0 %  (was 0 %)
+Health coverage:    ~96 %    (month granularity)
+```
 
 ---
 
-## Test Results
+### Route 2 — Metric Integrity &nbsp; ✅
 
-```
-15 passed, 0 failed, 0 errors, 0 warnings
-```
+Separated into two distinct artefacts:
 
-| Test Class | Tests | Status |
-|-----------|-------|--------|
-| TestConfig | 3 | PASS |
-| TestDataContracts | 4 | PASS |
-| TestRiskScore | 2 | PASS |
-| TestFeatures | 1 | PASS |
-| TestJoinCoverage | 1 | PASS |
-| TestReproducibility | 2 | PASS |
-| TestSmokePipeline | 2 | PASS |
+| File | Contents | Audience |
+|:-----|:---------|:---------|
+| `model_metrics.json` | Accuracy, precision, recall, F1, ROC-AUC, confusion matrix, 5-fold CV | Technical |
+| `business_impact.json` | High-risk orders, exposed value, scenario savings + `_disclaimer` | Business |
 
 ---
 
-## Known Remaining Items
+### Route 3 — Reproducibility &nbsp; ✅
 
-These are out-of-scope for this sprint but recommended for the next iteration:
+- `config.yaml` externalises seed, weights, thresholds, assumptions, file paths
+- `run_metadata.json` captures timestamp, Python version, package versions, SHA-256 fingerprints
+- `requirements.txt` pins dependency ranges
+- Local `random.Random(seed)` instance instead of global state
 
-1. **Time-based train/test split**: Current split is random. Walk-forward validation would be more realistic.
-2. **Gradient boosting comparison**: XGBoost/LightGBM may improve on baseline Random Forest.
-3. **SMOTE or threshold tuning**: Class imbalance handling could be improved beyond `class_weight='balanced'`.
-4. **Power BI / Streamlit dashboard**: Visualisation layer not yet built.
-5. **Actual lead-time measurement**: The "early warning" claim needs formal evaluation against delivery dates.
-6. **Source data packaging**: `suppliers.csv` and `purchase_orders.csv` should be committed to the repo or generated synthetically within the pipeline.
+---
+
+### Route 4 — Code Quality &nbsp; ✅
+
+- All functions have **type hints** and **docstrings**
+- **Structured logging** replaces `print()`
+- Config dict passed explicitly — no hidden global state
+- FutureWarning-clean (no chained assignment)
+- Composite risk score clipped to [0, 100]
+
+---
+
+### Route 5 — Test Harness &nbsp; ✅
+
+```
+15 passed · 0 failed · 0 errors · 0 warnings
+```
+
+| Test Class | Count | Scope |
+|:-----------|:-----:|:------|
+| `TestConfig` | 3 | YAML loading, required sections, missing file |
+| `TestDataContracts` | 4 | Schema validation, join coverage pass/fail |
+| `TestRiskScore` | 2 | Composite score bounds, late delivery flag |
+| `TestFeatures` | 1 | Rolling features not all null |
+| `TestJoinCoverage` | 1 | External coverage above threshold |
+| `TestReproducibility` | 2 | File hash determinism, metadata structure |
+| `TestSmokePipeline` | 2 | End-to-end data gen + ML training |
+
+Shared `@pytest.fixture` eliminates ~36 lines of duplicated setup code.
+
+---
+
+### Route 6 — CI Pipeline &nbsp; ✅
+
+`.github/workflows/ci.yml`:
+- **Triggers**: Push / PR affecting project directory
+- **Matrix**: Python 3.10, 3.11, 3.12
+- **Steps**: Install deps → pytest → flake8 lint
+
+---
+
+### Route 7 — Claim Evidence &nbsp; ✅
+
+`validate_claims.py` checks 7 headline claims against artefacts:
+
+| Claim | Label |
+|:------|:------|
+| Accuracy figure | `VERIFIED` — matches `model_metrics.json` |
+| Savings figure | `ASSUMPTION` — scenario-based with stated assumptions |
+| Early warning lead time | `UNVERIFIED` — not formally measured |
+| Feature count | `VERIFIED` — matches feature matrix columns |
+| Training rows | `VERIFIED` — matches data shape |
+
+Output: `claim_evidence.json`
+
+---
+
+### Route 8 — README Truthfulness &nbsp; ✅
+
+- Flat directory structure documented (no fictional subdirectories)
+- Run commands corrected
+- Financial figures labelled as "scenario-based estimates"
+- Explicit assumptions table
+- Known Limitations section added
+- Visual redesign with badges, architecture diagram, skills grid
+
+---
+
+## Post-Implementation Fixes
+
+After the initial 8-route implementation, a critique pass identified 8 additional issues.
+Each was resolved as an individual commit:
+
+| # | Fix | Commit |
+|:-:|:----|:-------|
+| 1 | Update README headline numbers to match artefacts | `fix: update README ...` |
+| 2 | Delete stale `model_performance.json` | `fix: remove stale ...` |
+| 3 | Align health date range to PO dates | `fix: align health ...` |
+| 4 | Clip composite risk score to [0, 100] | `fix: clip composite ...` |
+| 5 | Extract shared test fixtures | `refactor: extract shared ...` |
+| 6 | Add `tests/__init__.py` | `chore: add tests/__init__.py ...` |
+| 7 | Switch MD5 → SHA-256 for file hashing | `refactor: switch file hashing ...` |
+| 8 | Replace global random seed with local `Random` instance | `refactor: replace global random ...` |
 
 ---
 
@@ -133,21 +193,38 @@ These are out-of-scope for this sprint but recommended for the next iteration:
 ```bash
 cd "Supply Chain Disruption Predictor"
 
-# 1. Run tests
+# Run tests
 python -m pytest tests/ -v
 
-# 2. Run data pipeline
+# Run full pipeline
 python generate_disruption_data.py
-
-# 3. Train model
 python train_ml_model.py
-
-# 4. Validate claims
 python validate_claims.py
 
-# 5. Check outputs
+# Inspect outputs
 cat model_metrics.json
 cat business_impact.json
 cat join_diagnostics.json
 cat claim_evidence.json
 ```
+
+---
+
+## Remaining Recommendations
+
+These are out-of-scope but recommended for future iterations:
+
+| Priority | Item |
+|:---------|:-----|
+| High | Time-based train/test split (walk-forward validation) |
+| High | Gradient boosting comparison (XGBoost / LightGBM) |
+| Medium | SMOTE or threshold tuning for class imbalance |
+| Medium | Power BI / Streamlit dashboard |
+| Low | Formal prediction lead-time measurement |
+| Low | Source data packaging into repo |
+
+---
+
+<div align="center">
+<sub>Report generated as part of the Supply Chain Disruption Predictor pipeline hardening project.</sub>
+</div>
