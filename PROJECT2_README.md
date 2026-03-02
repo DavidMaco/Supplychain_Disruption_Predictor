@@ -7,9 +7,9 @@ delays and score supplier risk. All data is **synthetically generated**; all
 business-impact figures are **scenario-based estimates** subject to the
 assumptions documented below.
 
-> **Status**: Baseline model trained. External-risk feature join has been
-> corrected (date-alignment fix applied). Re-run the pipeline to generate
-> updated metrics.
+> **Status**: Pipeline re-run complete with date-alignment fix applied.
+> External features now contribute 14.4% combined importance (previously 0%).
+> All metrics below reflect the current pipeline output.
 
 ---
 
@@ -24,18 +24,17 @@ rush orders, and customer penalties. This project builds an ML system that:
 3. **Generates a risk scorecard** for the procurement team.
 4. **Estimates financial impact** under explicit, configurable assumptions.
 
-### Baseline Performance (pre-fix run)
+### Current Performance
 
 | Metric | Value | Note |
 |--------|-------|------|
-| Accuracy | 52 % | On imbalanced data (58.5 % late rate) |
-| Recall (late) | 59 % | Catches ~6/10 late deliveries |
-| ROC-AUC | 0.504 | Near random — see *Known Limitations* |
-| Training rows | 2 326 | Completed deliveries over 2 years |
+| Accuracy | 55.4 % | On imbalanced data (58.3 % late rate) |
+| Recall (late) | 63.0 % | Catches ~6/10 late deliveries |
+| ROC-AUC | 0.542 | Improved from 0.504 after join fix |
+| CV ROC-AUC | 0.526 ± 0.017 | 5-fold stratified cross-validation |
+| Training rows | 2 435 | Completed deliveries over 2 years |
 
-These numbers reflect the **original run** where all external risk features
-were null due to a date-join bug (now fixed). Re-running will produce updated
-metrics saved to `model_metrics.json`.
+Full technical metrics are persisted to `model_metrics.json` after each run.
 
 ---
 
@@ -247,14 +246,14 @@ print(f"Late delivery probability: {prob * 100:.1f}%")
 | Customer penalty | 10 % of order | Assumption |
 | Mitigation rate | 70 % | Assumption |
 
-### Illustrative Scenario (24 high-risk orders)
+### Illustrative Scenario (6 high-risk orders)
 
 | Metric | Value |
 |--------|-------|
-| Exposed value | ₦1.57 B |
-| Estimated disruption cost (unmitigated) | ₦94.1 M |
-| Estimated mitigation cost | ₦28.2 M |
-| **Scenario net savings** | **₦65.9 M** |
+| Exposed value | ₦412.8 M |
+| Estimated disruption cost (unmitigated) | ₦24.8 M |
+| Estimated mitigation savings (70 %) | ₦17.3 M |
+| **Scenario net savings** | **₦17.3 M** |
 
 These numbers will update automatically when the pipeline is re-run with
 different assumptions.
@@ -263,10 +262,9 @@ different assumptions.
 
 ## Known Limitations
 
-1. **Near-random baseline model**: ROC-AUC of 0.504 indicates the original
-   model barely outperformed random guessing. This was largely caused by the
-   external-feature join bug (now fixed). Re-running should improve
-   performance.
+1. **Modest baseline model**: ROC-AUC of 0.542 after the join fix — an
+   improvement over the pre-fix 0.504, but still limited by synthetic data.
+   Real procurement data would likely yield stronger signal.
 
 2. **Synthetic data only**: All supplier, PO, and risk-factor data is
    generated. Findings may not transfer to real procurement datasets.
@@ -274,7 +272,7 @@ different assumptions.
 3. **No temporal validation**: Train/test split is random, not time-based.
    A production system should use walk-forward or time-series cross-validation.
 
-4. **Business impact is scenario-based**: The ₦65.9 M savings figure is an
+4. **Business impact is scenario-based**: The ₦17.3 M savings figure is an
    estimate under stated assumptions, not a measured outcome.
 
 5. **No live integration**: The pipeline runs offline. Real-time ERP
@@ -287,7 +285,7 @@ different assumptions.
 
 ## Roadmap
 
-- [ ] Re-run pipeline end-to-end and publish updated metrics
+- [x] Re-run pipeline end-to-end and publish updated metrics
 - [ ] Add time-based train/test split (walk-forward validation)
 - [ ] Experiment with gradient boosting (XGBoost / LightGBM)
 - [ ] Add SMOTE or threshold tuning for class imbalance
