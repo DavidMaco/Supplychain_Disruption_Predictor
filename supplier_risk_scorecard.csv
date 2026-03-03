@@ -1,30 +1,30 @@
 supplier_id,supplier_name,historical_late_rate_pct,avg_delay_days,current_risk_score,predicted_late_prob_pct,high_risk_pending_orders,financial_health,quality_defect_rate
-SUP1013,Packaging Supplier 6 (NIG),69.3,17.0,58.1,52.3,1,49.8,4.6
-SUP1024,Equipment Supplier 6 (IND),62.0,16.0,57.1,48.6,0,35.2,4.75
-SUP1021,Equipment Supplier 3 (NIG),63.5,16.6,56.7,47.9,0,36.8,4.29
-SUP1009,Packaging Supplier 2 (CHI),57.0,16.1,56.2,50.7,0,32.7,4.74
-SUP1020,Equipment Supplier 2 (CHI),60.6,13.4,55.6,52.7,0,50.8,5.69
-SUP1010,Packaging Supplier 3 (NIG),55.6,14.4,54.4,57.3,0,48.3,4.67
-SUP1037,Services Supplier 10 (NIG),67.6,17.9,54.0,52.2,0,66.7,4.62
-SUP1039,Services Supplier 12 (IND),58.8,16.3,53.0,49.9,0,52.1,4.93
-SUP1023,Equipment Supplier 5 (IND),54.4,16.1,52.6,46.2,0,31.8,3.34
-SUP1008,Packaging Supplier 1 (CHI),57.4,14.0,51.9,51.3,0,51.4,3.85
-SUP1007,Raw Materials Supplier 8 (USA),60.9,16.9,51.7,54.3,1,72.0,5.39
-SUP1004,Raw Materials Supplier 5 (NIG),64.1,15.4,51.0,52.4,1,70.1,3.6
-SUP1027,Equipment Supplier 9 (IND),56.6,15.0,51.0,51.1,0,55.4,4.12
-SUP1031,Services Supplier 4 (NIG),62.2,15.5,50.9,50.6,0,71.0,5.09
-SUP1001,Raw Materials Supplier 2 (UK),63.1,14.7,50.4,47.6,0,68.4,4.58
-SUP1018,Packaging Supplier 11 (IND),59.0,14.3,50.1,51.6,1,68.4,4.67
-SUP1025,Equipment Supplier 7 (GER),57.0,15.3,50.0,53.0,0,67.0,4.74
-SUP1006,Raw Materials Supplier 7 (NIG),58.4,16.3,49.9,51.2,0,69.0,4.99
-SUP1012,Packaging Supplier 5 (USA),61.3,12.7,49.7,49.5,0,68.9,4.1
-SUP1015,Packaging Supplier 8 (NIG),56.9,18.3,49.3,53.4,2,67.2,3.98
-SUP1038,Services Supplier 11 (CHI),58.1,15.1,49.2,52.1,0,67.5,3.82
-SUP1005,Raw Materials Supplier 6 (NIG),59.3,14.2,49.1,50.9,0,68.7,3.78
-SUP1017,Packaging Supplier 10 (IND),56.3,14.1,47.5,52.0,0,73.5,4.07
-SUP1029,Services Supplier 2 (NIG),54.7,17.4,47.0,48.2,0,68.7,4.37
-SUP1030,Services Supplier 3 (CHI),44.9,18.3,46.8,50.4,0,50.3,3.81
-SUP1036,Services Supplier 9 (NIG),54.4,13.7,46.6,50.7,0,71.0,3.84
-SUP1019,Equipment Supplier 1 (NIG),51.9,15.6,46.0,50.2,0,71.0,4.35
-SUP1026,Equipment Supplier 8 (NIG),48.8,16.0,44.9,51.7,0,68.2,3.52
-SUP1032,Services Supplier 5 (NIG),50.0,15.7,44.3,47.1,0,72.9,4.75
+SUP1013,Packaging Supplier 6 (NIG),70.6,16.9,57.4,53.2,0,52.6,3.67
+SUP1021,Equipment Supplier 3 (NIG),62.0,16.4,57.0,52.2,1,34.8,3.55
+SUP1024,Equipment Supplier 6 (IND),61.2,16.0,55.4,47.1,0,34.6,3.67
+SUP1009,Packaging Supplier 2 (CHI),56.9,16.1,54.3,47.2,1,32.4,3.82
+SUP1020,Equipment Supplier 2 (CHI),59.4,13.8,54.2,56.8,0,52.8,4.01
+SUP1037,Services Supplier 10 (NIG),68.6,17.9,53.8,53.1,0,70.4,4.54
+SUP1023,Equipment Supplier 5 (IND),53.2,15.9,53.2,46.1,0,32.3,4.57
+SUP1001,Raw Materials Supplier 2 (UK),64.5,14.8,52.8,54.7,0,69.5,4.51
+SUP1027,Equipment Supplier 9 (IND),54.8,15.2,51.9,52.7,0,49.8,4.14
+SUP1039,Services Supplier 12 (IND),58.5,16.1,51.9,45.7,0,49.9,4.78
+SUP1010,Packaging Supplier 3 (NIG),56.8,14.3,51.7,49.6,0,52.4,4.56
+SUP1008,Packaging Supplier 1 (CHI),55.4,13.6,51.3,49.3,0,51.0,4.59
+SUP1004,Raw Materials Supplier 5 (NIG),64.2,15.3,51.2,52.7,0,69.0,3.51
+SUP1007,Raw Materials Supplier 8 (USA),59.8,16.7,50.6,52.6,0,71.1,5.16
+SUP1031,Services Supplier 4 (NIG),63.4,15.3,50.4,47.7,0,68.4,4.48
+SUP1005,Raw Materials Supplier 6 (NIG),59.8,14.5,50.0,51.4,0,68.8,4.37
+SUP1018,Packaging Supplier 11 (IND),60.0,14.3,49.6,49.8,0,72.7,5.16
+SUP1012,Packaging Supplier 5 (USA),61.3,12.7,49.3,48.4,0,70.2,4.3
+SUP1029,Services Supplier 2 (NIG),53.2,17.5,48.9,58.7,2,73.0,4.59
+SUP1015,Packaging Supplier 8 (NIG),58.0,18.4,48.8,54.8,1,73.5,3.89
+SUP1017,Packaging Supplier 10 (IND),58.0,14.1,48.5,49.9,0,68.0,3.95
+SUP1038,Services Supplier 11 (CHI),56.9,14.9,48.5,50.7,0,71.4,4.74
+SUP1025,Equipment Supplier 7 (GER),60.0,15.3,48.4,50.0,0,74.3,4.3
+SUP1019,Equipment Supplier 1 (NIG),54.1,15.4,48.0,55.0,1,72.1,4.35
+SUP1036,Services Supplier 9 (NIG),54.5,13.6,47.8,52.3,0,70.2,4.35
+SUP1006,Raw Materials Supplier 7 (NIG),58.6,16.2,47.3,47.2,0,72.8,4.23
+SUP1030,Services Supplier 3 (CHI),45.9,18.2,47.2,51.8,0,53.1,3.89
+SUP1026,Equipment Supplier 8 (NIG),50.6,16.0,45.4,49.3,0,68.6,4.07
+SUP1032,Services Supplier 5 (NIG),48.8,15.8,44.1,49.0,0,73.7,4.59

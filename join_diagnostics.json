@@ -23,30 +23,30 @@
   },
   "health": {
     "financial_health_score": {
-      "nulls": 103,
-      "coverage_pct": 96.05
+      "nulls": 0,
+      "coverage_pct": 100.0
     },
     "capacity_utilization_pct": {
-      "nulls": 103,
-      "coverage_pct": 96.05
+      "nulls": 0,
+      "coverage_pct": 100.0
     },
     "employee_turnover_pct": {
-      "nulls": 103,
-      "coverage_pct": 96.05
+      "nulls": 0,
+      "coverage_pct": 100.0
     },
     "quality_defect_rate": {
-      "nulls": 103,
-      "coverage_pct": 96.05
+      "nulls": 0,
+      "coverage_pct": 100.0
     },
     "inventory_days": {
-      "nulls": 103,
-      "coverage_pct": 96.05
+      "nulls": 0,
+      "coverage_pct": 100.0
     },
     "payment_default_risk": {
-      "nulls": 103,
-      "coverage_pct": 96.05
+      "nulls": 0,
+      "coverage_pct": 100.0
     }
   },
   "external_avg_coverage_pct": 100.0,
-  "health_avg_coverage_pct": 96.05
+  "health_avg_coverage_pct": 100.0
 }

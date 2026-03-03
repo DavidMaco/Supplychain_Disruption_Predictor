@@ -1,13 +1,13 @@
 {
-  "timestamp": "2026-03-02T14:24:02.262725+00:00",
+  "timestamp": "2026-03-02T14:54:25.957107+00:00",
   "python_version": "3.13.12 (tags/v3.13.12:1cbe481, Feb  3 2026, 18:22:25) [MSC v.1944 64 bit (AMD64)]",
   "config_seed": 42,
   "data_fingerprints": {
-    "ml_features": "21b22e77c884ec35d21d2e9b03835500"
+    "ml_features": "244c3717562efe49ebd427bfff74d4841279816a604e97b4f41714e9055f0a70"
   },
   "model_metrics_summary": {
-    "test_accuracy": 0.5544,
-    "roc_auc": 0.5424,
-    "cv_roc_auc_mean": 0.5264
+    "test_accuracy": 0.5451,
+    "roc_auc": 0.5398,
+    "cv_roc_auc_mean": 0.5105
   }
 }
