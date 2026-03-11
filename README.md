@@ -126,6 +126,9 @@ Traditional procurement systems are **reactive** — they detect problems only a
 
 - [Layman Guide](docs/PROJECT_EXPLAINED_FOR_EVERYONE.md)
 - [Content Campaign Pack](docs/CONTENT_CAMPAIGN_PACK.md)
+- [30-Day Posting Calendar](docs/POSTING_CALENDAR_30_DAYS.md)
+- [Personal Brand Content Pack](docs/PERSONAL_BRAND_CONTENT_PACK.md)
+- [Executive Summary](docs/EXECUTIVE_SUMMARY_ONE_PAGE.md)
 
 ---
 
