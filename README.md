@@ -34,6 +34,7 @@
 
 - [Why This Matters](#-why-this-matters)
 - [Architecture](#-architecture)
+- [Additional Documentation](#additional-documentation)
 - [Project Structure](#-project-structure)
 - [Quick Start](#-quick-start)
 - [How It Works](#-how-it-works)
@@ -118,6 +119,13 @@ Traditional procurement systems are **reactive** — they detect problems only a
 | **Testing** | pytest (15 tests), pytest-cov |
 | **CI/CD** | GitHub Actions (Python 3.10 / 3.11 / 3.12) |
 | **Hashing** | SHA-256 (reproducibility fingerprints) |
+
+---
+
+## Additional Documentation
+
+- [Layman Guide](docs/PROJECT_EXPLAINED_FOR_EVERYONE.md)
+- [Content Campaign Pack](docs/CONTENT_CAMPAIGN_PACK.md)
 
 ---
 
