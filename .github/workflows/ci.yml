@@ -5,15 +5,9 @@ name: CI
 
 on:
   push:
-    paths:
-      - "Supply Chain Disruption Predictor/**"
+    branches: [ main ]
   pull_request:
-    paths:
-      - "Supply Chain Disruption Predictor/**"
-
-defaults:
-  run:
-    working-directory: "Supply Chain Disruption Predictor"
+    branches: [ main ]
 
 jobs:
   test:
