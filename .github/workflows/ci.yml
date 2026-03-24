@@ -5,9 +5,15 @@ name: CI
 
 on:
   push:
-    branches: [ main ]
+    paths:
+      - "Supply Chain Disruption Predictor/**"
   pull_request:
-    branches: [ main ]
+    paths:
+      - "Supply Chain Disruption Predictor/**"
+
+defaults:
+  run:
+    working-directory: "Supply Chain Disruption Predictor"
 
 jobs:
   test:
@@ -36,4 +42,4 @@ jobs:
       - name: Lint (basic)
         run: |
           pip install flake8
-          flake8 *.py --max-line-length=120 --count --statistics --ignore=E501,W503
+          flake8 *.py --max-line-length=120 --count --statistics --ignore=E501,W503,W504

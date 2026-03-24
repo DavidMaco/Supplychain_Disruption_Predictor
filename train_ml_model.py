@@ -25,7 +25,6 @@ import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import (
     accuracy_score,
-    classification_report,
     confusion_matrix,
     f1_score,
     precision_score,
@@ -395,9 +394,6 @@ def calculate_business_impact(
 def main() -> None:
     """Run the full ML training and prediction pipeline."""
     cfg = load_config()
-    seed = cfg.get("random_seed", 42)
-    # sklearn uses random_state=seed explicitly; no global seed needed.
-
     outputs = cfg.get("outputs", {})
 
     # --- Load data ---
