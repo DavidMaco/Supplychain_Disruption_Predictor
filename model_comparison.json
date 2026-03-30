@@ -1,0 +1,46 @@
+{
+  "_generated_at": "2026-03-30T14:33:33.197018+00:00",
+  "_disclaimer": "All metrics are evaluated on a walk-forward temporal test fold (most-recent 20%% of orders by PO date). CV scores use full dataset.",
+  "split_method": "walk_forward_temporal",
+  "smote_applied": true,
+  "best_model": "RandomForest",
+  "best_cv_roc_auc": 0.5105,
+  "results": [
+    {
+      "model_name": "RandomForest",
+      "test_accuracy": 0.588,
+      "precision_late": 0.588,
+      "recall_late": 1.0,
+      "f1_late": 0.7405,
+      "roc_auc": 0.4827,
+      "cv_roc_auc_mean": 0.5105,
+      "cv_roc_auc_std": 0.0375,
+      "threshold_used": 0.3516,
+      "threshold_strategy": "f1",
+      "confusion_matrix": {
+        "true_negatives": 0,
+        "false_positives": 192,
+        "false_negatives": 0,
+        "true_positives": 274
+      }
+    },
+    {
+      "model_name": "XGBoost",
+      "test_accuracy": 0.6009,
+      "precision_late": 0.5961,
+      "recall_late": 0.9964,
+      "f1_late": 0.7459,
+      "roc_auc": 0.4803,
+      "cv_roc_auc_mean": 0.508,
+      "cv_roc_auc_std": 0.0314,
+      "threshold_used": 0.2358,
+      "threshold_strategy": "f1",
+      "confusion_matrix": {
+        "true_negatives": 7,
+        "false_positives": 185,
+        "false_negatives": 1,
+        "true_positives": 273
+      }
+    }
+  ]
+}

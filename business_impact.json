@@ -5,9 +5,9 @@
     "assumed_avg_delay_weeks": 2,
     "mitigation_success_rate": 0.7
   },
-  "high_risk_orders": 6,
-  "high_risk_value_ngn": 875204118.52,
-  "estimated_delay_cost_ngn": 52512247.11,
-  "potential_savings_ngn": 36758572.98,
-  "avg_prediction_confidence": 0.5094
+  "high_risk_orders": 174,
+  "high_risk_value_ngn": 21838598157.54,
+  "estimated_delay_cost_ngn": 1310315889.45,
+  "potential_savings_ngn": 917221122.62,
+  "avg_prediction_confidence": 0.5603
 }

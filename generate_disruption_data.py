@@ -26,7 +26,6 @@ from pipeline_utils import (
     load_config,
     setup_logging,
     validate_dataframe_schema,
-    validate_join_coverage,
     generate_run_metadata,
 )
 
@@ -294,7 +293,7 @@ def enhance_purchase_orders_with_risk(
 
     if ext_avg_cov < min_ext:
         logger.warning("External join coverage %.1f%% < threshold %.1f%% -- check date alignment!",
-                        ext_avg_cov, min_ext)
+                       ext_avg_cov, min_ext)
     else:
         logger.info("External join coverage: %.1f%% (threshold: %.1f%%)", ext_avg_cov, min_ext)
 

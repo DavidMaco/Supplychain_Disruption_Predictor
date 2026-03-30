@@ -249,3 +249,208 @@ class TestSmokePipeline:
         """Smoke test: ML pipeline completes without error."""
         from train_ml_model import main as ml_main
         ml_main()  # Should not raise
+
+
+# ===================================================================
+# Next-phase: walk-forward split
+# ===================================================================
+
+class TestTemporalSplit:
+    """Tests for the walk-forward temporal split function."""
+
+    def test_split_preserves_time_order(self, sample_config):
+        """Training fold should contain only older orders than the test fold."""
+        from train_ml_model import prepare_data_for_ml, temporal_split
+
+        # Build a small DataFrame with explicit dates and delivery status
+        dates = pd.date_range("2024-01-01", periods=40, freq="7D")
+        df = pd.DataFrame({
+            "po_date": dates,
+            "delivery_status": ["Delivered"] * 40,
+            "is_late_delivery": ([0, 1] * 20),
+            "financial_health_score": [70.0] * 40,
+            "capacity_utilization_pct": [80.0] * 40,
+            "employee_turnover_pct": [5.0] * 40,
+            "quality_defect_rate": [2.0] * 40,
+            "inventory_days": [30] * 40,
+            "payment_default_risk": [15.0] * 40,
+            "rainy_season": [0] * 40,
+            "rainfall_index": [0.3] * 40,
+            "holiday_period": [0] * 40,
+            "port_congestion_index": [35.0] * 40,
+            "disruption_severity": [0] * 40,
+            "total_amount_ngn": [1e7] * 40,
+            "quantity": [200] * 40,
+            "order_size_vs_avg": [1.0] * 40,
+            "supplier_avg_delay": [0.0] * 40,
+            "supplier_late_delivery_rate": [0.5] * 40,
+            "days_since_last_order": [30.0] * 40,
+            "composite_risk_score": [50.0] * 40,
+            "delivery_delay_days": [2.0] * 40,
+        })
+
+        _, y_full, feature_columns = prepare_data_for_ml(df, sample_config)
+        X_tr, X_te, y_tr, y_te = temporal_split(df, feature_columns, sample_config)
+
+        assert len(X_tr) > 0, "Training set is empty"
+        assert len(X_te) > 0, "Test set is empty"
+        assert len(X_tr) + len(X_te) == len(df), "Split sizes don't sum to total"
+
+    def test_split_ratio_approximately_correct(self, sample_config):
+        """Training fold should be roughly 80% of the data."""
+        from train_ml_model import temporal_split
+
+        n = 100
+        dates = pd.date_range("2024-01-01", periods=n, freq="1D")
+        df = pd.DataFrame({
+            "po_date": dates,
+            "delivery_status": ["Delivered"] * n,
+            "is_late_delivery": ([0, 1] * (n // 2)),
+            "financial_health_score": [70.0] * n,
+            "capacity_utilization_pct": [80.0] * n,
+            "employee_turnover_pct": [5.0] * n,
+            "quality_defect_rate": [2.0] * n,
+            "inventory_days": [30] * n,
+            "payment_default_risk": [15.0] * n,
+            "rainy_season": [0] * n,
+            "rainfall_index": [0.3] * n,
+            "holiday_period": [0] * n,
+            "port_congestion_index": [35.0] * n,
+            "disruption_severity": [0] * n,
+            "total_amount_ngn": [1e7] * n,
+            "quantity": [200] * n,
+            "order_size_vs_avg": [1.0] * n,
+            "supplier_avg_delay": [0.0] * n,
+            "supplier_late_delivery_rate": [0.5] * n,
+            "days_since_last_order": [30.0] * n,
+            "composite_risk_score": [50.0] * n,
+            "delivery_delay_days": [2.0] * n,
+        })
+        feature_cols = [
+            "financial_health_score", "capacity_utilization_pct",
+            "employee_turnover_pct", "quality_defect_rate",
+            "inventory_days", "payment_default_risk",
+            "rainy_season", "rainfall_index", "holiday_period",
+            "port_congestion_index", "disruption_severity",
+            "total_amount_ngn", "quantity", "order_size_vs_avg",
+            "supplier_avg_delay", "supplier_late_delivery_rate",
+            "days_since_last_order", "composite_risk_score",
+        ]
+        cutoff = sample_config.get("walk_forward", {}).get("train_cutoff_pct", 0.80)
+        X_tr, X_te, _, _ = temporal_split(df, feature_cols, sample_config)
+        assert abs(len(X_tr) / n - cutoff) < 0.02, "Train split ratio deviates more than 2%"
+
+
+# ===================================================================
+# Next-phase: threshold optimisation
+# ===================================================================
+
+class TestThresholdOptimisation:
+    """Tests for optimize_decision_threshold."""
+
+    def test_f1_threshold_in_range(self):
+        """Optimal F1 threshold must be in (0, 1)."""
+        from train_ml_model import optimize_decision_threshold
+
+        rng = np.random.default_rng(42)
+        y_true = rng.integers(0, 2, size=200)
+        y_proba = rng.uniform(0, 1, size=200)
+        thr = optimize_decision_threshold(y_true, y_proba, strategy="f1")
+        assert 0 < thr < 1, f"Threshold {thr} out of (0,1)"
+
+    def test_youden_threshold_in_range(self):
+        """Optimal Youden threshold must be in (0, 1)."""
+        from train_ml_model import optimize_decision_threshold
+
+        rng = np.random.default_rng(0)
+        y_true = rng.integers(0, 2, size=200)
+        y_proba = rng.uniform(0, 1, size=200)
+        thr = optimize_decision_threshold(y_true, y_proba, strategy="youden")
+        assert 0 < thr < 1, f"Threshold {thr} out of (0,1)"
+
+
+# ===================================================================
+# Next-phase: lead-time measurement
+# ===================================================================
+
+class TestLeadTimeMeasurement:
+    """Tests for measure_lead_times module."""
+
+    def _make_lead_time_df(self) -> pd.DataFrame:
+        n = 30
+        base = pd.Timestamp("2024-01-01")
+        po_dates = [base + pd.Timedelta(days=i * 5) for i in range(n)]
+        expected = [d + pd.Timedelta(days=14) for d in po_dates]
+        actual = [d + pd.Timedelta(days=14 + (i % 5 - 1)) for i, d in enumerate(po_dates)]
+        return pd.DataFrame({
+            "po_number": [f"PO{i:04d}" for i in range(n)],
+            "supplier_id": [f"S{(i % 3) + 1:03d}" for i in range(n)],
+            "supplier_name": [f"Supplier {(i % 3) + 1}" for i in range(n)],
+            "po_date": po_dates,
+            "expected_delivery_date": expected,
+            "actual_delivery_date": actual,
+            "delivery_status": ["Delivered"] * n,
+        })
+
+    def test_compute_lead_times_creates_columns(self):
+        from measure_lead_times import compute_lead_times
+        df = self._make_lead_time_df()
+        result = compute_lead_times(df)
+        for col in ("actual_lead_days", "expected_lead_days", "lead_time_variance", "lateness_flag"):
+            assert col in result.columns, f"Missing column: {col}"
+
+    def test_lateness_flag_matches_variance(self):
+        from measure_lead_times import compute_lead_times
+        df = self._make_lead_time_df()
+        result = compute_lead_times(df)
+        expected_flags = (result["lead_time_variance"] > 0).astype(int)
+        pd.testing.assert_series_equal(
+            result["lateness_flag"], expected_flags, check_names=False
+        )
+
+    def test_supplier_summary_sorted_desc(self):
+        from measure_lead_times import compute_lead_times, supplier_lead_time_summary
+        df = self._make_lead_time_df()
+        detail = compute_lead_times(df)
+        summary = supplier_lead_time_summary(detail)
+        scores = summary["early_warning_score"].tolist()
+        assert scores == sorted(scores, reverse=True), "Supplier summary not sorted descending"
+
+    def test_overall_summary_on_time_rate_range(self):
+        from measure_lead_times import compute_lead_times, overall_summary, supplier_lead_time_summary
+        df = self._make_lead_time_df()
+        detail = compute_lead_times(df)
+        supplier_df = supplier_lead_time_summary(detail)
+        summary = overall_summary(detail, supplier_df)
+        assert 0 <= summary["on_time_rate_pct"] <= 100
+
+
+# ===================================================================
+# Next-phase: SMOTE
+# ===================================================================
+
+class TestSMOTE:
+    """Tests for apply_smote (graceful degradation if imblearn missing)."""
+
+    def test_smote_returns_arrays(self, sample_config):
+        from train_ml_model import apply_smote
+
+        rng = np.random.default_rng(1)
+        X = pd.DataFrame(rng.uniform(0, 1, (100, 5)), columns=list("ABCDE"))
+        y = pd.Series([0] * 70 + [1] * 30)
+        X_res, y_res = apply_smote(X, y, sample_config)
+        assert isinstance(X_res, np.ndarray)
+        assert isinstance(y_res, np.ndarray)
+        assert len(X_res) == len(y_res)
+
+    def test_smote_disabled_returns_original_shape(self, sample_config):
+        from train_ml_model import apply_smote
+        import copy
+        cfg = copy.deepcopy(sample_config)
+        cfg["smote"] = {"enabled": False}
+        rng = np.random.default_rng(2)
+        X = pd.DataFrame(rng.uniform(0, 1, (50, 5)), columns=list("ABCDE"))
+        y = pd.Series([0] * 30 + [1] * 20)
+        X_res, y_res = apply_smote(X, y, cfg)
+        assert len(X_res) == 50, "Disabled SMOTE should not change dataset size"
+

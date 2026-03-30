@@ -102,7 +102,7 @@ def validate_claims() -> List[Dict[str, Any]]:
 
     # --- Claim 6: External events 0% importance ---
     ext_features = ["rainy_season", "rainfall_index", "holiday_period",
-                     "port_congestion_index", "disruption_severity"]
+                    "port_congestion_index", "disruption_severity"]
     if not importance.empty:
         ext_imp = importance[importance["feature"].isin(ext_features)]
         total_ext = ext_imp["importance"].sum() if not ext_imp.empty else None

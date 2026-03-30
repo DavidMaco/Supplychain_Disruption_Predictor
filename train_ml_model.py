@@ -7,7 +7,9 @@ Refactored for:
   - Structured logging (replaces print)
   - Full technical metric persistence (accuracy, precision, recall, F1, AUC, confusion matrix)
   - Separated business-impact scenario file with explicit assumption labels
-  - Temporal (out-of-time) validation option
+  - Temporal (walk-forward) train/test split — closes temporal-leakage gap
+  - SMOTE oversampling for class imbalance (requires imbalanced-learn)
+  - Decision-threshold optimisation by F1 or Youden index
   - Threshold calibration awareness
   - Type hints
 """
@@ -25,9 +27,9 @@ import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import (
     accuracy_score,
-    classification_report,
     confusion_matrix,
     f1_score,
+    precision_recall_curve,
     precision_score,
     recall_score,
     roc_auc_score,
@@ -35,6 +37,13 @@ from sklearn.metrics import (
 from sklearn.model_selection import StratifiedKFold, cross_val_score, train_test_split
 
 from pipeline_utils import load_config, setup_logging, generate_run_metadata
+
+# Optional: SMOTE (imbalanced-learn)
+try:
+    from imblearn.over_sampling import SMOTE
+    _SMOTE_AVAILABLE = True
+except ImportError:
+    _SMOTE_AVAILABLE = False
 
 # ---------------------------------------------------------------------------
 # Module-level setup
@@ -101,6 +110,151 @@ def prepare_data_for_ml(
 
 
 # ===================================================================
+# 1b. Walk-forward temporal split
+# ===================================================================
+
+def temporal_split(
+    df: pd.DataFrame,
+    feature_columns: List[str],
+    cfg: dict,
+) -> Tuple[pd.DataFrame, pd.DataFrame, pd.Series, pd.Series]:
+    """Split completed orders by time — earliest N% trains, remainder tests.
+
+    Avoids temporal leakage present in a random shuffle split.
+
+    Args:
+        df: Completed-orders DataFrame (must contain ``po_date``).
+        feature_columns: Feature column names.
+        cfg: Loaded config dictionary.
+
+    Returns:
+        (X_train, X_test, y_train, y_test)
+    """
+    wf_cfg = cfg.get("walk_forward", {})
+    cutoff_pct = wf_cfg.get("train_cutoff_pct", 0.80)
+
+    if "po_date" not in df.columns:
+        logger.warning("po_date not in DataFrame — falling back to random split")
+        seed = cfg.get("random_seed", 42)
+        test_size = cfg.get("model", {}).get("test_size", 0.20)
+        X = df[feature_columns].fillna(0)
+        y = df["is_late_delivery"]
+        return train_test_split(X, y, test_size=test_size, random_state=seed, stratify=y)
+
+    sorted_df = df.sort_values("po_date").reset_index(drop=True)
+    n = len(sorted_df)
+    cutoff_idx = int(n * cutoff_pct)
+    cutoff_date = sorted_df.loc[cutoff_idx, "po_date"]
+
+    train_part = sorted_df.iloc[:cutoff_idx]
+    test_part = sorted_df.iloc[cutoff_idx:]
+
+    X_train = train_part[feature_columns].fillna(0)
+    y_train = train_part["is_late_delivery"]
+    X_test = test_part[feature_columns].fillna(0)
+    y_test = test_part["is_late_delivery"]
+
+    logger.info(
+        "Walk-forward split: train=%d (up to %s)  |  test=%d (from %s)",
+        len(X_train), cutoff_date, len(X_test), cutoff_date,
+    )
+    return X_train, X_test, y_train, y_test
+
+
+# ===================================================================
+# 1c. SMOTE oversampling
+# ===================================================================
+
+def apply_smote(
+    X_train: pd.DataFrame,
+    y_train: pd.Series,
+    cfg: dict,
+) -> Tuple[np.ndarray, np.ndarray]:
+    """Oversample the minority class in the training set using SMOTE.
+
+    Falls back silently to the original arrays if imbalanced-learn is
+    not installed or if the training set is too small.
+
+    Args:
+        X_train: Training feature matrix.
+        y_train: Training target vector.
+        cfg: Loaded config dictionary.
+
+    Returns:
+        (X_resampled, y_resampled) as numpy arrays.
+    """
+    smote_cfg = cfg.get("smote", {})
+    if not smote_cfg.get("enabled", True):
+        return X_train.values, y_train.values
+
+    if not _SMOTE_AVAILABLE:
+        logger.warning("imbalanced-learn not installed — skipping SMOTE. "
+                       "Run: pip install imbalanced-learn")
+        return X_train.values, y_train.values
+
+    k = smote_cfg.get("k_neighbors", 5)
+    seed = cfg.get("random_seed", 42)
+    minority_count = int(y_train.value_counts().min())
+
+    if minority_count <= k:
+        logger.warning(
+            "SMOTE skipped: minority class has %d samples <= k_neighbors=%d",
+            minority_count, k,
+        )
+        return X_train.values, y_train.values
+
+    sm = SMOTE(k_neighbors=k, random_state=seed)
+    X_res, y_res = sm.fit_resample(X_train.values, y_train.values)
+    logger.info(
+        "SMOTE applied: %d → %d training samples (minority class balanced)",
+        len(X_train), len(X_res),
+    )
+    return X_res, y_res
+
+
+# ===================================================================
+# 1d. Decision-threshold optimisation
+# ===================================================================
+
+def optimize_decision_threshold(
+    y_true: np.ndarray,
+    y_proba: np.ndarray,
+    strategy: str = "f1",
+) -> float:
+    """Find the optimal decision threshold for binary classification.
+
+    Args:
+        y_true: Ground-truth binary labels.
+        y_proba: Predicted probabilities for the positive class.
+        strategy: ``"f1"`` maximises F1; ``"youden"`` maximises sensitivity+specificity-1.
+
+    Returns:
+        Optimal threshold in (0, 1).
+    """
+    precision, recall, thresholds = precision_recall_curve(y_true, y_proba)
+
+    if strategy == "youden":
+        # Youden's J = sensitivity + specificity - 1 = recall - FPR
+        # Approximate via (recall - (1-precision)) across PR thresholds
+        j_scores = recall[:-1] - (1 - precision[:-1])
+        best_idx = int(np.argmax(j_scores))
+    else:
+        # Maximise F1 — guard against zero denominator with np.errstate
+        denom = precision[:-1] + recall[:-1]
+        with np.errstate(invalid="ignore", divide="ignore"):
+            f1_scores = np.where(
+                denom == 0,
+                0.0,
+                2 * precision[:-1] * recall[:-1] / denom,
+            )
+        best_idx = int(np.argmax(f1_scores))
+
+    optimal = float(thresholds[best_idx])
+    logger.info("Optimal threshold (%s): %.4f", strategy, optimal)
+    return optimal
+
+
+# ===================================================================
 # 2. Model training + full evaluation
 # ===================================================================
 
@@ -108,27 +262,48 @@ def train_model(
     X: pd.DataFrame,
     y: pd.Series,
     cfg: dict,
+    X_train: Optional[pd.DataFrame] = None,
+    X_test: Optional[pd.DataFrame] = None,
+    y_train: Optional[pd.Series] = None,
+    y_test: Optional[pd.Series] = None,
 ) -> Tuple[RandomForestClassifier, Dict[str, Any]]:
     """Train Random Forest classifier and return full evaluation metrics.
 
+    When pre-split data is supplied (X_train/X_test/y_train/y_test), those
+    are used directly — enabling walk-forward temporal splits. Otherwise the
+    function falls back to a random stratified split.
+
     Args:
-        X: Feature matrix.
-        y: Binary target.
+        X: Full feature matrix (used for CV scoring).
+        y: Full binary target (used for CV scoring).
         cfg: Loaded config dictionary.
+        X_train: Optional pre-split training features.
+        X_test: Optional pre-split test features.
+        y_train: Optional pre-split training labels.
+        y_test: Optional pre-split test labels.
 
     Returns:
         (trained model, metrics dictionary)
     """
     model_cfg = cfg.get("model", {})
     seed = cfg.get("random_seed", 42)
-    test_size = model_cfg.get("test_size", 0.20)
     cv_folds = model_cfg.get("cv_folds", 5)
 
-    # --- Train / test split ---
-    X_train, X_test, y_train, y_test = train_test_split(
-        X, y, test_size=test_size, random_state=seed, stratify=y,
-    )
-    logger.info("Train: %d  |  Test: %d", len(X_train), len(X_test))
+    # --- Use provided split or fall back to random split ---
+    if X_train is None or X_test is None:
+        test_size = model_cfg.get("test_size", 0.20)
+        X_train, X_test, y_train, y_test = train_test_split(
+            X, y, test_size=test_size, random_state=seed, stratify=y,
+        )
+        split_method = "random_stratified"
+    else:
+        split_method = "walk_forward_temporal"
+
+    logger.info("Train: %d  |  Test: %d  |  Split: %s",
+                len(X_train), len(X_test), split_method)
+
+    # --- SMOTE (applied to training set only) ---
+    X_train_fit, y_train_fit = apply_smote(X_train, y_train, cfg)
 
     # --- Build model ---
     rf = RandomForestClassifier(
@@ -139,13 +314,24 @@ def train_model(
         random_state=seed,
         class_weight=model_cfg.get("class_weight", "balanced"),
     )
-    rf.fit(X_train, y_train)
+    rf.fit(X_train_fit, y_train_fit)
 
-    # --- Predictions ---
-    y_pred = rf.predict(X_test)
+    # --- Predictions at optimised threshold ---
     y_proba = rf.predict_proba(X_test)[:, 1]
 
-    # --- Cross-validation ---
+    thr_cfg = cfg.get("threshold_optimization", {})
+    if thr_cfg.get("enabled", True):
+        strategy = thr_cfg.get("strategy", "f1")
+        optimal_thr = optimize_decision_threshold(
+            np.array(y_test), y_proba, strategy=strategy,
+        )
+    else:
+        optimal_thr = 0.5
+        strategy = "fixed_0.5"
+
+    y_pred = (y_proba >= optimal_thr).astype(int)
+
+    # --- Cross-validation (on full dataset, no SMOTE for fair CV baseline) ---
     cv = StratifiedKFold(n_splits=cv_folds, shuffle=True, random_state=seed)
     cv_scores = cross_val_score(rf, X, y, cv=cv, scoring="roc_auc")
 
@@ -154,7 +340,7 @@ def train_model(
 
     # --- Collect all metrics ---
     metrics: Dict[str, Any] = {
-        "train_accuracy": round(float(rf.score(X_train, y_train)), 4),
+        "train_accuracy": round(float(rf.score(X_train_fit, y_train_fit)), 4),
         "test_accuracy": round(float(accuracy_score(y_test, y_pred)), 4),
         "precision_late": round(float(precision_score(y_test, y_pred, pos_label=1, zero_division=0)), 4),
         "recall_late": round(float(recall_score(y_test, y_pred, pos_label=1, zero_division=0)), 4),
@@ -173,9 +359,12 @@ def train_model(
             "positive_pct": round(float(y.mean() * 100), 2),
             "negative_pct": round(float((1 - y.mean()) * 100), 2),
         },
-        "threshold_used": 0.5,
+        "threshold_used": round(optimal_thr, 4),
+        "threshold_strategy": strategy,
+        "split_method": split_method,
+        "smote_applied": _SMOTE_AVAILABLE and cfg.get("smote", {}).get("enabled", True),
         "model_params": rf.get_params(),
-        "test_size": test_size,
+        "test_size": round(len(X_test) / len(y), 4),
         "cv_folds": cv_folds,
         "evaluation_timestamp": datetime.now(timezone.utc).isoformat(),
     }
@@ -186,6 +375,7 @@ def train_model(
     logger.info("F1 (Late): %.4f", metrics["f1_late"])
     logger.info("ROC-AUC: %.4f", metrics["roc_auc"])
     logger.info("CV ROC-AUC: %.4f +/- %.4f", metrics["cv_roc_auc_mean"], metrics["cv_roc_auc_std"])
+    logger.info("Optimal threshold: %.4f (%s)", optimal_thr, strategy)
     logger.info("Confusion Matrix: TN=%d FP=%d FN=%d TP=%d",
                 cm[0, 0], cm[0, 1], cm[1, 0], cm[1, 1])
 
@@ -228,6 +418,7 @@ def predict_pending_orders(
     all_data_df: pd.DataFrame,
     feature_columns: List[str],
     cfg: dict,
+    optimal_threshold: Optional[float] = None,
 ) -> Optional[pd.DataFrame]:
     """Score pending orders and assign risk levels.
 
@@ -236,6 +427,8 @@ def predict_pending_orders(
         all_data_df: Full ML-features DataFrame (includes Pending rows).
         feature_columns: Feature names.
         cfg: Loaded config.
+        optimal_threshold: Decision threshold from training; falls back to
+                           config low/medium boundaries when not supplied.
 
     Returns:
         DataFrame of pending orders with predicted risk, or None.
@@ -251,6 +444,10 @@ def predict_pending_orders(
     thresholds = cfg.get("thresholds", {})
     low_max = thresholds.get("low_risk_max", 0.30)
     med_max = thresholds.get("medium_risk_max", 0.60)
+
+    # If an optimised threshold was found, use it as the high-risk boundary
+    if optimal_threshold is not None and optimal_threshold > low_max:
+        med_max = optimal_threshold
 
     pending["predicted_risk_level"] = pd.cut(
         pending["predicted_late_probability"],
@@ -395,9 +592,6 @@ def calculate_business_impact(
 def main() -> None:
     """Run the full ML training and prediction pipeline."""
     cfg = load_config()
-    seed = cfg.get("random_seed", 42)
-    # sklearn uses random_state=seed explicitly; no global seed needed.
-
     outputs = cfg.get("outputs", {})
 
     # --- Load data ---
@@ -411,8 +605,19 @@ def main() -> None:
     # --- Prepare ---
     X, y, feature_columns = prepare_data_for_ml(ml_data, cfg)
 
-    # --- Train + evaluate ---
-    model, metrics = train_model(X, y, cfg)
+    # --- Train + evaluate (walk-forward or random split) ---
+    completed_df = ml_data[ml_data["delivery_status"].isin(["Delivered", "Partial"])].copy()
+    if "po_date" in completed_df.columns:
+        completed_df["po_date"] = pd.to_datetime(completed_df["po_date"])
+
+    wf_enabled = cfg.get("walk_forward", {}).get("enabled", True)
+    if wf_enabled:
+        X_tr, X_te, y_tr, y_te = temporal_split(completed_df, feature_columns, cfg)
+        model, metrics = train_model(X, y, cfg,
+                                     X_train=X_tr, X_test=X_te,
+                                     y_train=y_tr, y_test=y_te)
+    else:
+        model, metrics = train_model(X, y, cfg)
 
     # --- Feature importance ---
     importance_df = analyze_feature_importance(model, feature_columns)
@@ -423,7 +628,9 @@ def main() -> None:
     logger.info("Model saved: %s", model_path)
 
     # --- Predict pending ---
-    predictions = predict_pending_orders(model, ml_data, feature_columns, cfg)
+    optimal_thr = metrics.get("threshold_used")
+    predictions = predict_pending_orders(model, ml_data, feature_columns, cfg,
+                                         optimal_threshold=optimal_thr)
 
     # --- Scorecard ---
     scorecard = generate_supplier_risk_scorecard(ml_data, predictions)

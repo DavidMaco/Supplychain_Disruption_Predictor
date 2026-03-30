@@ -93,6 +93,40 @@ business_assumptions:
   mitigation_success_rate: 0.70       # 70% of delays prevented with intervention
   note: "These are scenario assumptions, NOT measured outcomes. Treat as estimates."
 
+# --- Walk-forward Temporal Split ---
+walk_forward:
+  enabled: true
+  train_cutoff_pct: 0.80            # Earliest 80% of POs → training window
+
+# --- Model Comparison (next-phase) ---
+model_comparison:
+  models:
+    - random_forest
+    - xgboost
+  output_file: "model_comparison.json"
+  best_model_file: "best_model.pkl"
+  xgboost_params:
+    n_estimators: 200
+    max_depth: 6
+    learning_rate: 0.05
+    subsample: 0.8
+    colsample_bytree: 0.8
+
+# --- SMOTE Oversampling ---
+smote:
+  enabled: true
+  k_neighbors: 5
+
+# --- Decision-threshold Optimisation ---
+threshold_optimization:
+  enabled: true
+  strategy: "f1"                    # Options: f1, youden
+
+# --- Lead-time Analysis ---
+lead_time:
+  output_file: "lead_time_analysis.csv"
+  summary_file: "lead_time_summary.json"
+
 # --- Model Outputs ---
 outputs:
   model_file: "disruption_predictor_model.pkl"

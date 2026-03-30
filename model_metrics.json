@@ -1,24 +1,27 @@
 {
-  "train_accuracy": 0.8925,
-  "test_accuracy": 0.5451,
-  "precision_late": 0.6056,
-  "recall_late": 0.6324,
-  "f1_late": 0.6187,
-  "roc_auc": 0.5398,
+  "train_accuracy": 0.8596,
+  "test_accuracy": 0.588,
+  "precision_late": 0.588,
+  "recall_late": 1.0,
+  "f1_late": 0.7405,
+  "roc_auc": 0.4827,
   "cv_roc_auc_mean": 0.5105,
   "cv_roc_auc_std": 0.0375,
   "confusion_matrix": {
-    "true_negatives": 82,
-    "false_positives": 112,
-    "false_negatives": 100,
-    "true_positives": 172
+    "true_negatives": 0,
+    "false_positives": 192,
+    "false_negatives": 0,
+    "true_positives": 274
   },
   "class_distribution": {
     "total_samples": 2326,
     "positive_pct": 58.47,
     "negative_pct": 41.53
   },
-  "threshold_used": 0.5,
+  "threshold_used": 0.3516,
+  "threshold_strategy": "f1",
+  "split_method": "walk_forward_temporal",
+  "smote_applied": true,
   "model_params": {
     "bootstrap": "True",
     "ccp_alpha": "0.0",
@@ -40,7 +43,7 @@
     "verbose": "0",
     "warm_start": "False"
   },
-  "test_size": 0.2,
+  "test_size": 0.2003,
   "cv_folds": 5,
-  "evaluation_timestamp": "2026-03-02T14:54:25.618924+00:00"
+  "evaluation_timestamp": "2026-03-30T14:34:21.729522+00:00"
 }

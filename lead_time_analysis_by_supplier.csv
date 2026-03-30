@@ -1,0 +1,30 @@
+supplier_id,supplier_name,order_count,avg_actual_lead_days,avg_expected_lead_days,avg_variance_days,std_variance_days,on_time_rate_pct,worst_delay_days,early_warning_score
+SUP1037,Services Supplier 10 (NIG),70,53.6,41.5,12.1,11.6,31.4,30,75.5
+SUP1015,Packaging Supplier 8 (NIG),69,55.9,45.3,10.7,11.5,42.0,30,72.6
+SUP1013,Packaging Supplier 6 (NIG),68,60.6,49.0,11.6,10.8,29.4,30,70.9
+SUP1029,Services Supplier 2 (NIG),62,47.3,38.3,9.0,11.4,46.8,30,69.2
+SUP1007,Raw Materials Supplier 8 (USA),122,51.7,42.0,9.8,10.8,40.2,30,67.7
+SUP1039,Services Supplier 12 (IND),94,50.5,41.4,9.1,11.0,41.5,30,67.7
+SUP1024,Equipment Supplier 6 (IND),67,62.0,52.5,9.6,10.8,38.8,30,67.4
+SUP1031,Services Supplier 4 (NIG),71,53.2,43.7,9.5,10.7,36.6,30,66.9
+SUP1021,Equipment Supplier 3 (NIG),71,66.7,57.0,9.7,10.6,38.0,30,66.7
+SUP1006,Raw Materials Supplier 7 (NIG),99,50.8,41.4,9.4,10.6,41.4,30,66.1
+SUP1009,Packaging Supplier 2 (CHI),72,62.9,54.4,8.5,10.9,43.1,30,66.0
+SUP1030,Services Supplier 3 (CHI),74,45.8,37.8,8.0,10.9,54.1,30,65.2
+SUP1027,Equipment Supplier 9 (IND),73,61.3,53.5,7.8,10.9,45.2,30,64.9
+SUP1001,Raw Materials Supplier 2 (UK),124,54.7,45.3,9.4,10.2,35.5,30,64.3
+SUP1004,Raw Materials Supplier 5 (NIG),123,52.6,43.0,9.6,10.1,35.8,30,64.1
+SUP1023,Equipment Supplier 5 (IND),77,59.6,51.5,8.1,10.6,46.8,29,63.9
+SUP1025,Equipment Supplier 7 (GER),75,64.9,56.0,8.9,10.3,40.0,30,63.8
+SUP1019,Equipment Supplier 1 (NIG),74,54.6,46.5,8.1,10.4,45.9,30,63.3
+SUP1005,Raw Materials Supplier 6 (NIG),117,48.0,39.9,8.2,10.4,40.2,30,63.3
+SUP1026,Equipment Supplier 8 (NIG),79,59.3,51.3,8.0,10.4,49.4,30,62.6
+SUP1017,Packaging Supplier 10 (IND),69,55.4,47.3,8.1,10.2,42.0,30,62.1
+SUP1038,Services Supplier 11 (CHI),72,47.8,39.7,8.1,10.2,43.1,30,61.9
+SUP1018,Packaging Supplier 11 (IND),60,58.6,50.5,8.1,10.1,40.0,30,61.8
+SUP1010,Packaging Supplier 3 (NIG),81,51.6,43.7,7.9,10.1,43.2,30,61.1
+SUP1032,Services Supplier 5 (NIG),82,46.2,38.8,7.4,10.2,51.2,30,61.0
+SUP1020,Equipment Supplier 2 (CHI),64,63.7,55.8,7.9,9.9,40.6,30,60.3
+SUP1036,Services Supplier 9 (NIG),77,45.9,39.0,6.9,9.9,45.5,30,58.5
+SUP1008,Packaging Supplier 1 (CHI),65,53.7,46.5,7.2,9.6,44.6,30,57.4
+SUP1012,Packaging Supplier 5 (USA),75,52.8,45.4,7.4,9.3,38.7,29,56.3
